@@ -3,144 +3,125 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jheremy Sánchez - Portfolio</title>
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="img/logo.png"> 
+    <title>Jheremy Sánchez | Portfolio ASIX</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <div class="container">
-    <div class="header">
-        <div class="branding">
-            <img src="img/logo.png" alt="Perfil" class="logo-img" onerror="this.src='https://via.placeholder.com/50/333/fff?text=JS'">
-            
-            <div class="brand-text">
-                <span class="brand-name">JHEREMY SÁNCHEZ</span>
-                <span id="dynamic-role" class="brand-role"></span>
+    <header class="header">
+        <div class="brand">
+            <h1>JHEREMY SÁNCHEZ</h1>
+            <span id="typewriter"></span>
+        </div>
+        <div class="top-controls">
+            <button id="theme-toggle" onclick="toggleTheme()" class="icon-btn">
+                <i class="fas fa-sun"></i>
+            </button>
+            <div class="lang-control">
+                <i class="fas fa-globe"></i>
+                <select id="lang-select" onchange="changeLang()">
+                    <option value="es">ES</option>
+                    <option value="en">EN</option>
+                    <option value="ca">CA</option>
+                    <option value="fr">FR</option>
+                    <option value="de">DE</option>
+                </select>
             </div>
         </div>
+    </header>
 
-        <div class="header-controls">
-            <span id="date-display" class="date-text"></span>
-            
-            <select class="lang-select" id="lang-select" onchange="changeLang()">
-                <option value="es">ES</option>
-                <option value="ca">CA</option>
-                <option value="en">EN</option>
-                <option value="fr">FR</option>
-                <option value="de">DE</option>
-            </select>
-            
-            <button class="btn theme-btn" onclick="toggleTheme()" id="theme-btn">☀</button>
-        </div>
-    </div>
-
-    <div class="main-content">
-        <div id="home-view">
-            <div class="title-box">
-                <h1>JHEREMY SÁNCHEZ</h1>
-                <p id="hero-sub">ESPECIALISTA EN CIBERSEGURIDAD</p>
-                <div class="id-badge">ID: 7E9-ITB-SEC // SYSTEM ONLINE</div>
+    <main class="main-content">
+        <section id="home-view" class="view-section">
+            <h2 class="hero-title" id="l-hero-title">System & Network Administrator</h2>
+            <p class="hero-desc" id="l-hero-desc">
+                Estudiante de ASIR especializado en ciberseguridad, configuración de redes y administración de sistemas.
+            </p>
+            <div class="hero-btns">
+                <button class="btn-primary" onclick="showView('projects')" id="l-btn-work">Ver Proyectos</button>
+                <button class="btn-outline" onclick="showView('contact')" id="l-btn-contact">Contactar</button>
             </div>
+        </section>
 
-            <div class="selected-section">
-                <span class="section-label" id="sel-label">> MÓDULOS DESTACADOS</span>
-                <div class="mini-grid">
-                    <div class="mini-card" onclick="launch(1)">
-                        <div class="mini-card-title">BASE64 ENCODER</div>
-                        <div class="mini-card-cat">[ TOOLS ]</div>
-                    </div>
-                    <div class="mini-card" onclick="launch(3)">
-                        <div class="mini-card-title">BINARY CONVERTER</div>
-                        <div class="mini-card-cat">[ TOOLS ]</div>
-                    </div>
-                    <div class="mini-card" onclick="launch(4)">
-                        <div class="mini-card-title">MORSE CODE</div>
-                        <div class="mini-card-cat">[ TOOLS ]</div>
-                    </div>
+        <section id="about-view" class="view-section">
+            <div class="about-card">
+                <h2 id="l-ab-title" style="color: var(--accent); margin-bottom: 20px; font-size: 1.8rem;">Sobre mi perfil</h2>
+                <p id="l-ab-p1" class="about-text">
+                    Soy estudiante de primer año de ASIR en el Institut Tecnològic de Barcelona, con un fuerte enfoque en ciberseguridad y administración de redes.
+                </p>
+                <p id="l-ab-p2" class="about-text">
+                    Desarrollo experiencia práctica mediante laboratorios virtuales, Linux y scripting en Python. Mi objetivo es especializarme en ciberseguridad defensiva y contribuir a infraestructuras IT resilientes.
+                </p>
+                
+                <div class="skills-tags">
+                    <span><i class="fab fa-linux"></i> Linux/Windows Admin</span>
+                    <span><i class="fab fa-python"></i> Python Scripting</span>
+                    <span><i class="fas fa-network-wired"></i> TCP/IP & DNS</span>
+                    <span><i class="fas fa-shield-alt"></i> Ciberseguridad Defensiva</span>
+                    <span><i class="fas fa-server"></i> VirtualBox</span>
+                </div>
+                
+                <div style="margin-top: 25px;">
+                    <a href="sanchezmorillojheremy_cv.pdf" download class="btn-primary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
+                        <i class="fas fa-file-pdf"></i> <span id="l-btn-cv">Descargar CV</span>
+                    </a>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <div id="projects-view">
-            <div class="filter-bar">
-                <input type="text" id="search-input" class="search-box" placeholder="Buscar..." oninput="applyFilters()">
-                <div class="filter-btns">
-                    <button class="btn" id="f-all" onclick="setFilter('all')">TODOS</button>
-                    <button class="btn" id="f-func" onclick="setFilter('func')">FUNCIONALES</button>
-                    <button class="btn" id="f-cripto" onclick="setFilter('Cripto')">CRIPTO</button>
-                    <button class="btn" id="f-net" onclick="setFilter('Net')">REDES</button>
-                    <button class="btn" id="f-conv" onclick="setFilter('Conv')">TOOLS</button>
+        <section id="projects-view" class="view-section">
+            <div class="grid">
+                <div class="project-card">
+                    <h3 id="l-p1-title">Calculadora Energética</h3>
+                    <p id="l-p1-desc">Aplicación web interactiva para calcular la eficiencia y el ahorro eléctrico.</p>
+                    <a href="https://jheremysanchez7e9-web.github.io/TA08_Calculadoraestalvienergetic/" target="_blank" class="btn-link">
+                        <i class="fas fa-external-link-alt"></i> <span id="l-p-open">Abrir Proyecto</span>
+                    </a>
+                </div>
+                <div class="project-card">
+                    <h3 id="l-p2-title">Infraestructura Debian</h3>
+                    <p id="l-p2-desc">Despliegue de servicios DNS, Apache y DHCP en entornos Linux Server.</p>
+                    <span class="btn-link disabled" id="l-p-local"><i class="fas fa-server"></i> Proyecto Local</span>
                 </div>
             </div>
-            <div id="grid-container" class="grid-container"></div>
-        </div>
+        </section>
 
-        <div id="contact-view">
-            <h3 id="c-title" class="section-title">CONTACTO</h3>
-            
+        <section id="contact-view" class="view-section">
             <div class="contact-layout">
-                <div class="contact-left">
-                    <div class="agent-info">
-                        <p>> <span id="l-name">AGENTE:</span> Jheremy Sánchez</p>
-                        <p>> EMAIL: jheremy.sanchez.7e9@itb.cat</p>
-                    </div>
-                    
-                    <div class="contact-form">
-                        <input type="text" id="form-name" placeholder="Nombre">
-                        <input type="email" id="form-email" placeholder="Email">
-                        
-                        <div class="phone-group">
-                            <select id="form-prefix">
-                                <option value="+34">ES +34</option>
-                                <option value="+1">US +1</option>
-                                <option value="+44">UK +44</option>
-                                <option value="+33">FR +33</option>
-                            </select>
-                            <input type="tel" id="form-phone" placeholder="Teléfono">
-                        </div>
-
-                        <textarea id="form-desc" rows="4" placeholder="Mensaje"></textarea>
-                        
-                        <button class="btn action-btn" id="c-btn-send" onclick="sendContact()">ENVIAR</button>
-                    </div>
+                <div class="contact-info">
+                    <h2 id="l-c-title" style="margin-bottom: 15px;">Contacto Directo</h2>
+                    <a href="https://www.linkedin.com/in/jheremysanchez/" target="_blank" class="info-card">
+                        <i class="fab fa-linkedin"></i>
+                        <div><strong>LinkedIn</strong><br><small>jheremysanchez</small></div>
+                    </a>
+                    <a href="mailto:jheremysebastian17@gmail.com" class="info-card">
+                        <i class="fas fa-envelope"></i>
+                        <div><strong>Email</strong><br><small>jheremysebastian17@gmail.com</small></div>
+                    </a>
+                    <form onsubmit="handleMailto(event)">
+                        <input type="text" id="f-name" placeholder="Nombre completo" required>
+                        <textarea id="f-msg" rows="4" placeholder="¿En qué puedo ayudarte?" required></textarea>
+                        <button type="submit" class="btn-primary" style="width: 100%;" id="l-btn-send">Enviar vía Email</button>
+                    </form>
                 </div>
-
-                <div class="map-container">
-                    <iframe 
-                        class="map-frame" 
-                        src="https://www.openstreetmap.org/export/embed.html?bbox=2.1800,41.4200,2.2000,41.4400&amp;layer=mapnik&amp;marker=41.4320,2.1900" 
-                        allowfullscreen>
-                    </iframe>
-                    <div class="map-overlay">TARGET: BARCELONA [ITB]</div>
+                <div class="map-box">
+                    <iframe src="https://maps.google.com/maps?q=Institut%20Tecnologic%20de%20Barcelona,%20Carrer%20d'Aiguablava,%20121,%20Nou%20Barris,%2008033%20Barcelona&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
                 </div>
             </div>
-            
-            <button class="btn back-btn" id="c-back" onclick="showHome()">← VOLVER</button>
-        </div>
+        </section>
+    </main>
 
-        <div id="app-view">
-            <div id="app-header" class="app-header"></div>
-            <div id="app-desc" class="app-desc"></div>
-            <div class="tool-box" id="ui"></div>
-            <button class="btn back-btn" id="app-close-btn" onclick="showProjects()">CERRAR MÓDULO</button>
-        </div>
-    </div>
-
-    <div class="footer">
-        <div class="footer-nav">
-            <button class="btn" onclick="showHome()" id="nav-h">INICIO</button>
-            <button class="btn" onclick="showProjects()" id="nav-p">PROYECTOS</button>
-            <button class="btn" onclick="showContact()" id="nav-c">CONTACTO</button>
-        </div>
-        <div class="footer-copy">
-            © <span id="current-year"></span> JHEREMY SÁNCHEZ - ALL RIGHTS RESERVED
-        </div>
-    </div>
+    <footer class="footer">
+        <nav>
+            <button class="nav-link active" onclick="showView('home')" id="n-h">INICIO</button>
+            <button class="nav-link" onclick="showView('about')" id="n-a">SOBRE MÍ</button>
+            <button class="nav-link" onclick="showView('projects')" id="n-p">PROYECTOS</button>
+            <button class="nav-link" onclick="showView('contact')" id="n-c">CONTACTO</button>
+        </nav>
+    </footer>
 </div>
 
-<script src="js/date.js"></script>
-<script src="js/main.js"></script>
-
+<script src="script.js"></script>
 </body>
 </html>
