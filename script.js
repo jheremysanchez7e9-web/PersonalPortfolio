@@ -52,7 +52,7 @@ const dict = {
         abT: "À propos de moi",
         abP1: "Étudiant en première année d'ASIR à l'Institut Tecnològic de Barcelona, avec un fort intérêt pour la cybersécurité, la sécurité des réseaux et l'administration système.",
         abP2: "Je développe activement une expérience pratique grâce à des laboratoires virtuels, en travaillant avec des systèmes Linux, des scripts Python et la configuration de réseaux. Mon objectif est de me spécialiser dans la cybersécurité défensive.",
-        btnCV: "Télécharger CV",
+        btnCV: "Télécharger le CV",
         p1T: "Calculatrice Énergétique", p1D: "Application web interactive pour calculer l'efficacité et les économies d'électricité.",
         p2T: "Infrastructure Debian", p2D: "Déploiement de services DNS, Apache et DHCP dans des environnements Linux.",
         pOpen: "Ouvrir le Projet", pLocal: "Projet Local",
