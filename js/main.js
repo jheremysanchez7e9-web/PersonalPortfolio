@@ -1,362 +1,161 @@
-/**
- * ------------------------------------------------------------------
- * CONFIGURATION & LOCALIZATION
- * ------------------------------------------------------------------
- */
-const langDict = {
+const dict = {
     es: {
-        sub: "ESPECIALISTA EN CIBERSEGURIDAD", h: "INICIO", p: "PROYECTOS", c: "CONTACTO",
-        all: "TODOS", func: "FUNCIONALES", cripto: "CRIPTO", net: "REDES", conv: "TOOLS",
-        cTitle: "CONTACTO", send: "ENVIAR MENSAJE", back: "← VOLVER", close: "CERRAR MÓDULO",
-        lName: "AGENTE:",
-        labels: { n: "Nombre", e: "Email", p: "Teléfono", d: "Mensaje" },
-        sPlaceholder: "Buscar proyecto...",
-        wait: "Esperando entrada...", write: "Escriba aquí...",
-        scan: "INICIAR RASTREO DE IP", tracking: "CONECTANDO CON SATÉLITE...",
-        gen: "GENERAR", dev: "ERROR: MÓDULO EN DESARROLLO (NO DISPONIBLE)",
-        selProj: "> MÓDULOS DESTACADOS",
-        roles: ["ESTUDIANTE", "PENTESTER", "ADMIN DE REDES", "DEV WEB"]
+        roles: ["> CYBERSECURITY STUDENT", "> SYSTEMS ADMIN", "> NETWORK SECURITY"],
+        heroT: "System & Network Administrator",
+        heroD: "Estudiante de ASIR especializado en ciberseguridad, configuración de redes y administración de sistemas.",
+        btnW: "Ver Proyectos", btnC: "Contactar",
+        abT: "Sobre mi perfil",
+        abP1: "Soy estudiante de primer año de ASIR en el Institut Tecnològic de Barcelona, con un fuerte enfoque en ciberseguridad, seguridad de redes y administración de sistemas.",
+        abP2: "Desarrollo experiencia práctica a través de entornos de laboratorio virtuales, trabajando con sistemas Linux, scripting en Python y configuración de redes. Mi objetivo es especializarme en ciberseguridad defensiva y contribuir a infraestructuras IT seguras y resilientes.",
+        btnCV: "Descargar CV",
+        p1T: "Calculadora Energética", p1D: "Aplicación web interactiva para calcular la eficiencia y el ahorro eléctrico.",
+        p2T: "Infraestructura Debian", p2D: "Despliegue de servicios DNS, Apache y DHCP en entornos Linux Server.",
+        pOpen: "Abrir Proyecto", pLocal: "Proyecto Local",
+        cT: "Contacto Directo", fName: "Nombre completo", fMsg: "¿En qué puedo ayudarte?", btnS: "Enviar vía Email",
+        nH: "INICIO", nA: "SOBRE MÍ", nP: "PROYECTOS", nC: "CONTACTO"
     },
     en: {
-        sub: "CYBERSECURITY SPECIALIST", h: "HOME", p: "WORK", c: "CONTACT",
-        all: "ALL", func: "WORKING", cripto: "CRYPTO", net: "NETWORK", conv: "TOOLS",
-        cTitle: "CONTACT", send: "SEND MESSAGE", back: "← BACK", close: "CLOSE MODULE",
-        lName: "AGENT:",
-        labels: { n: "Name", e: "Email", p: "Phone", d: "Message" },
-        sPlaceholder: "Search project...",
-        wait: "Awaiting input...", write: "Type here...",
-        scan: "START IP TRACKING", tracking: "CONNECTING TO SATELLITE...",
-        gen: "GENERATE", dev: "ERROR: MODULE IN DEVELOPMENT (N/A)",
-        selProj: "> FEATURED MODULES",
-        roles: ["STUDENT", "PENTESTER", "NETWORK ADMIN", "WEB DEV"]
+        roles: ["> CYBERSECURITY STUDENT", "> SYSTEMS ADMIN", "> NETWORK SECURITY"],
+        heroT: "System & Network Administrator",
+        heroD: "ASIR student specialized in cybersecurity, network configuration, and systems administration.",
+        btnW: "View Projects", btnC: "Contact Me",
+        abT: "About me",
+        abP1: "First-year Higher Technician in Network Systems Administration (ASIR) student at Institut Tecnològic de Barcelona with a strong focus on cybersecurity, network security, and system administration.",
+        abP2: "I am actively developing hands-on experience through virtual lab environments, working with Linux systems, Python scripting, and network configuration. My goal is to specialize in defensive cybersecurity and contribute to secure and resilient IT infrastructures.",
+        btnCV: "Download CV",
+        p1T: "Energy Calculator", p1D: "Interactive web app to calculate energy efficiency and savings.",
+        p2T: "Debian Infrastructure", p2D: "Deployment of DNS, Apache, and DHCP services in Linux Server environments.",
+        pOpen: "Open Project", pLocal: "Local Project",
+        cT: "Direct Contact", fName: "Full Name", fMsg: "How can I help you?", btnS: "Send via Email",
+        nH: "HOME", nA: "ABOUT ME", nP: "PROJECTS", nC: "CONTACT"
     },
     ca: {
-        sub: "ESPECIALISTA EN CIBERSEGURETAT", h: "INICI", p: "PROJECTES", c: "CONTACTE",
-        all: "TOTS", func: "FUNCIONALS", cripto: "CRIPTO", net: "XARXES", conv: "EINES",
-        cTitle: "CONTACTE", send: "ENVIAR MISSATGE", back: "← TORNAR", close: "TANCAR MÒDUL",
-        lName: "AGENT:",
-        labels: { n: "Nom", e: "Email", p: "Telèfon", d: "Missatge" },
-        sPlaceholder: "Cercar projecte...",
-        wait: "Esperant dades...", write: "Escriu aquí...",
-        scan: "INICIAR RASTREIG", tracking: "CONNECTANT AMB SATÈL·LIT...",
-        gen: "GENERAR", dev: "ERROR: MÒDUL EN DESENVOLUPAMENT (N/A)",
-        selProj: "> MÒDULS DESTACATS",
-        roles: ["ESTUDIANT", "PENTESTER", "ADMIN XARXES", "DEV WEB"]
+        roles: ["> CYBERSECURITY STUDENT", "> SYSTEMS ADMIN", "> NETWORK SECURITY"],
+        heroT: "Administrador de Sistemes i Xarxes",
+        heroD: "Estudiant d'ASIX especialitzat en ciberseguretat, configuració de xarxes i administració de sistemes.",
+        btnW: "Veure Projectes", btnC: "Contactar",
+        abT: "Sobre el meu perfil",
+        abP1: "Sóc estudiant de primer any d'ASIX a l'Institut Tecnològic de Barcelona, amb un fort enfocament en ciberseguretat, seguretat de xarxes i administració de sistemes.",
+        abP2: "Desenvolupo experiència pràctica a través de laboratoris virtuals, treballant amb sistemes Linux, scripting en Python i configuració de xarxes. El meu objectiu és especialitzar-me en ciberseguretat defensiva i contribuir a infraestructures IT segures i resilients.",
+        btnCV: "Descarregar CV",
+        p1T: "Calculadora Energètica", p1D: "Aplicació web interactiva per calcular l'eficiència i l'estalvi elèctric.",
+        p2T: "Infraestructura Debian", p2D: "Desplegament de serveis DNS, Apache i DHCP en entorns Linux Server.",
+        pOpen: "Obrir Projecte", pLocal: "Projecte Local",
+        cT: "Contacte Directe", fName: "Nom complet", fMsg: "En què et puc ajudar?", btnS: "Enviar via Email",
+        nH: "INICI", nA: "SOBRE MI", nP: "PROJECTES", nC: "CONTACTE"
     },
     fr: {
-        sub: "SPÉCIALISTE EN CYBERSÉCURITÉ", h: "ACCUEIL", p: "PROJETS", c: "CONTACT",
-        all: "TOUS", func: "FONCTIONNEL", cripto: "CRYPTO", net: "RÉSEAU", conv: "OUTILS",
-        cTitle: "CONTACT", send: "ENVOYER", back: "← RETOUR", close: "FERMER",
-        lName: "AGENT:",
-        labels: { n: "Nom", e: "Email", p: "Téléphone", d: "Message" },
-        sPlaceholder: "Chercher...",
-        wait: "En attente...", write: "Écrire ici...",
-        scan: "TRACER IP", tracking: "CONNEXION...",
-        gen: "GÉNÉRER", dev: "ERREUR: MODULE EN DÉVELOPPEMENT",
-        selProj: "> MODULES EN VEDETTE",
-        roles: ["ÉTUDIANT", "PENTESTER", "ADMIN RÉSEAU", "DEV WEB"]
+        roles: ["> CYBERSECURITY STUDENT", "> SYSTEMS ADMIN", "> NETWORK SECURITY"],
+        heroT: "Administrateur Systèmes et Réseaux",
+        heroD: "Étudiant en ASIR spécialisé dans la cybersécurité, la configuration réseau et l'administration système.",
+        btnW: "Voir Projets", btnC: "Me Contacter",
+        abT: "À propos de moi",
+        abP1: "Étudiant en première année d'ASIR à l'Institut Tecnològic de Barcelona, avec un fort intérêt pour la cybersécurité, la sécurité des réseaux et l'administration système.",
+        abP2: "Je développe activement une expérience pratique grâce à des laboratoires virtuels, en travaillant avec des systèmes Linux, des scripts Python et la configuration de réseaux. Mon objectif est de me spécialiser dans la cybersécurité défensive.",
+        btnCV: "Télécharger CV",
+        p1T: "Calculatrice Énergétique", p1D: "Application web interactive pour calculer l'efficacité et les économies d'électricité.",
+        p2T: "Infrastructure Debian", p2D: "Déploiement de services DNS, Apache et DHCP dans des environnements Linux.",
+        pOpen: "Ouvrir le Projet", pLocal: "Projet Local",
+        cT: "Contact Direct", fName: "Nom complet", fMsg: "Comment puis-je vous aider?", btnS: "Envoyer par Email",
+        nH: "ACCUEIL", nA: "À PROPOS", nP: "PROJETS", nC: "CONTACT"
     },
     de: {
-        sub: "IT-SICHERHEITSSPEZIALIST", h: "HOME", p: "PROJEKTE", c: "KONTAKT",
-        all: "ALLE", func: "LAUFFÄHIG", cripto: "KRYPTO", net: "NETZWERK", conv: "TOOLS",
-        cTitle: "KONTAKT", send: "SENDEN", back: "← ZURÜCK", close: "SCHLIESSEN",
-        lName: "AGENT:",
-        labels: { n: "Name", e: "Email", p: "Telefon", d: "Nachricht" },
-        sPlaceholder: "Suche...",
-        wait: "Warten...", write: "Hier tippen...",
-        scan: "IP TRACKEN", tracking: "VERBINDUNG...",
-        gen: "GENERIEREN", dev: "FEHLER: IN ENTWICKLUNG",
-        selProj: "> HIGHLIGHTS",
-        roles: ["STUDENT", "PENTESTER", "NETZWERK ADMIN", "WEB DEV"]
+        roles: ["> CYBERSECURITY STUDENT", "> SYSTEMS ADMIN", "> NETWORK SECURITY"],
+        heroT: "System- und Netzwerkadministrator",
+        heroD: "ASIR-Student mit Spezialisierung auf Cybersicherheit, Netzwerkkonfiguration und Systemadministration.",
+        btnW: "Projekte Ansehen", btnC: "Kontakt",
+        abT: "Über mich",
+        abP1: "Ich bin ASIR-Student im ersten Jahr am Institut Tecnològic de Barcelona mit einem starken Fokus auf Cybersicherheit, Netzwerksicherheit und Systemadministration.",
+        abP2: "Ich sammle praktische Erfahrungen in virtuellen Laborumgebungen und arbeite mit Linux-Systemen, Python-Skripten und Netzwerkkonfigurationen. Mein Ziel ist es, mich auf defensive Cybersicherheit zu spezialisieren.",
+        btnCV: "Lebenslauf herunterladen",
+        p1T: "Energie-Rechner", p1D: "Interaktive Web-App zur Berechnung von Energieeffizienz und Einsparungen.",
+        p2T: "Debian-Infrastruktur", p2D: "Bereitstellung von DNS-, Apache- und DHCP-Diensten in Linux-Umgebungen.",
+        pOpen: "Projekt Öffnen", pLocal: "Lokales Projekt",
+        cT: "Direkter Kontakt", fName: "Vollständiger Name", fMsg: "Wie kann ich helfen?", btnS: "Per E-Mail senden",
+        nH: "START", nA: "ÜBER MICH", nP: "PROJEKTE", nC: "KONTAKT"
     }
 };
 
-const projects = [
-    {n:"SHA-256 Hasher", c:"Cripto", f:true},
-    {n:"Base64 Encoder", c:"Conv", f:true},
-    {n:"IP Tracker", c:"Net", f:true},
-    {n:"Binary Converter", c:"Conv", f:true},
-    {n:"Morse Code", c:"Conv", f:true},
-    {n:"HEX Viewer", c:"Conv", f:true},
-    {n:"MAC Generator", c:"Net", f:true},
-    {n:"Subnet Calc", c:"Net", f:false},
-    {n:"Port Scanner", c:"Net", f:false},
-    {n:"SQL Injector", c:"Web", f:false},
-    {n:"Steganography", c:"Cripto", f:false},
-    {n:"Password Gen", c:"Cripto", f:false}
-];
-
-let currentAppIndex = -1;
-let activeFilter = 'all';
-let typeWriterInterval;
-let typeWriterTimeout;
-
-/**
- * ------------------------------------------------------------------
- * DYNAMIC ROLE TYPING EFFECT (BUG FREE)
- * ------------------------------------------------------------------
- */
-function initTypeWriter(roles) {
-    const el = document.getElementById('dynamic-role');
-    if(!el) return;
-    
-    // 1. Limpiar cualquier proceso anterior
-    clearTimeout(typeWriterTimeout);
-    el.innerText = "";
-    
-    let roleIndex = 0;
-    let charIndex = 0;
-    let isDeleting = false;
-    
-    function type() {
-        const currentRole = roles[roleIndex];
-        
-        if (isDeleting) {
-            el.innerText = "> " + currentRole.substring(0, charIndex - 1);
-            charIndex--;
-        } else {
-            el.innerText = "> " + currentRole.substring(0, charIndex + 1);
-            charIndex++;
-        }
-
-        let speed = isDeleting ? 30 : 100;
-
-        if (!isDeleting && charIndex === currentRole.length) {
-            speed = 2000; // Pausa al final de la palabra
-            isDeleting = true;
-        } else if (isDeleting && charIndex === 0) {
-            isDeleting = false;
-            roleIndex = (roleIndex + 1) % roles.length;
-            speed = 500;
-        }
-
-        typeWriterTimeout = setTimeout(type, speed);
-    }
-    type();
-}
-
-/**
- * ------------------------------------------------------------------
- * UI FUNCTIONS
- * ------------------------------------------------------------------
- */
-function hideAll() {
-    ["home-view", "projects-view", "contact-view", "app-view"].forEach(id => {
-        document.getElementById(id).style.display = "none";
-    });
-}
-
-function showHome() { currentAppIndex = -1; hideAll(); document.getElementById("home-view").style.display = "flex"; }
-function showProjects() { currentAppIndex = -1; hideAll(); document.getElementById("projects-view").style.display = "flex"; applyFilters(); }
-function showContact() { currentAppIndex = -1; hideAll(); document.getElementById("contact-view").style.display = "flex"; }
-
 function changeLang() {
     const l = document.getElementById('lang-select').value;
-    const d = langDict[l] || langDict['en'];
+    const d = dict[l];
 
-    // UI Estática
-    document.getElementById('hero-sub').innerText = d.sub;
-    document.getElementById('nav-h').innerText = d.h;
-    document.getElementById('nav-p').innerText = d.p;
-    document.getElementById('nav-c').innerText = d.c;
-    document.getElementById('sel-label').innerText = d.selProj;
+    document.getElementById('l-hero-title').innerText = d.heroT;
+    document.getElementById('l-hero-desc').innerText = d.heroD;
+    document.getElementById('l-btn-work').innerText = d.btnW;
+    document.getElementById('l-btn-contact').innerText = d.btnC;
     
-    // Filtros
-    document.getElementById('f-all').innerText = d.all;
-    document.getElementById('f-func').innerText = d.func;
-    document.getElementById('f-cripto').innerText = d.cripto;
-    document.getElementById('f-net').innerText = d.net;
-    document.getElementById('f-conv').innerText = d.conv;
+    document.getElementById('l-ab-title').innerText = d.abT;
+    document.getElementById('l-ab-p1').innerText = d.abP1;
+    document.getElementById('l-ab-p2').innerText = d.abP2;
+    document.getElementById('l-btn-cv').innerText = d.btnCV;
+    
+    document.getElementById('l-p1-title').innerText = d.p1T;
+    document.getElementById('l-p1-desc').innerText = d.p1D;
+    document.getElementById('l-p2-title').innerText = d.p2T;
+    document.getElementById('l-p2-desc').innerText = d.p2D;
+    document.getElementById('l-p-open').innerText = d.pOpen;
+    document.getElementById('l-p-local').innerText = d.pLocal;
+    
+    document.getElementById('l-c-title').innerText = d.cT;
+    document.getElementById('f-name').placeholder = d.fName;
+    document.getElementById('f-msg').placeholder = d.fMsg;
+    document.getElementById('l-btn-send').innerText = d.btnS;
+    
+    document.getElementById('n-h').innerText = d.nH;
+    document.getElementById('n-a').innerText = d.nA;
+    document.getElementById('n-p').innerText = d.nP;
+    document.getElementById('n-c').innerText = d.nC;
 
-    // Contacto
-    document.getElementById('c-title').innerText = d.cTitle;
-    document.getElementById('c-btn-send').innerText = d.send;
-    document.getElementById('c-back').innerText = d.back;
-    document.getElementById('l-name').innerText = d.lName;
-    document.getElementById('form-name').placeholder = d.labels.n;
-    document.getElementById('form-email').placeholder = d.labels.e;
-    document.getElementById('form-phone').placeholder = d.labels.p;
-    document.getElementById('form-desc').placeholder = d.labels.d;
-
-    // App
-    document.getElementById('app-close-btn').innerText = d.close;
-    document.getElementById('search-input').placeholder = d.sPlaceholder;
-
-    // Reiniciar TypeWriter
-    initTypeWriter(d.roles);
-
-    // Actualizar filtros y fecha
-    applyFilters();
-    if(typeof updateDate === "function") updateDate();
+    startTypewriter(d.roles);
 }
 
-function applyFilters() {
-    const search = document.getElementById("search-input").value.toLowerCase();
-    const grid = document.getElementById("grid-container");
-    const l = document.getElementById('lang-select').value;
-    
-    const filtered = projects.filter(p => {
-        return p.n.toLowerCase().includes(search) &&
-               (activeFilter === 'all' || (activeFilter === 'func' && p.f) || p.c === activeFilter);
-    });
-
-    grid.innerHTML = filtered.map(p => {
-        const originalIndex = projects.indexOf(p);
-        const color = p.f ? 'var(--text)' : '#555';
-        return `
-            <div class="card" onclick="launch(${originalIndex})">
-                ${!p.f ? '<span class="badge">DEV</span>' : ''}
-                <div style="color:${color}; font-weight:600; margin-bottom:5px;">${p.n}</div>
-                <div style="font-size:10px; opacity:0.6">[ ${p.c} ]</div>
-            </div>`;
-    }).join('');
+let twTime;
+function startTypewriter(roles) {
+    const el = document.getElementById('typewriter');
+    clearTimeout(twTime);
+    let rIdx = 0, cIdx = 0, isDel = false;
+    function tick() {
+        const current = roles[rIdx];
+        el.innerText = current.substring(0, cIdx + (isDel ? -1 : 1));
+        cIdx += isDel ? -1 : 1;
+        let speed = isDel ? 50 : 120;
+        if(!isDel && cIdx === current.length) { speed = 2000; isDel = true; }
+        else if(isDel && cIdx === 0) { isDel = false; rIdx = (rIdx + 1) % roles.length; speed = 500; }
+        twTime = setTimeout(tick, speed);
+    }
+    tick();
 }
 
-function setFilter(f) {
-    activeFilter = f;
-    document.querySelectorAll('.filter-btns .btn').forEach(b => b.classList.remove('active'));
-    document.getElementById('f-' + f.toLowerCase()).classList.add('active');
-    applyFilters();
+function showView(id) {
+    document.querySelectorAll('.view-section').forEach(v => v.style.display = 'none');
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    document.getElementById(id + '-view').style.display = 'flex';
+    document.getElementById('n-' + id.charAt(0)).classList.add('active');
+}
+
+function handleMailto(e) {
+    e.preventDefault();
+    const name = document.getElementById('f-name').value;
+    const msg = document.getElementById('f-msg').value;
+    window.location.href = `mailto:jheremysebastian17@gmail.com?subject=Portfolio Contact - ${name}&body=${msg}`;
 }
 
 function toggleTheme() {
-    document.body.classList.toggle('light-mode');
-    const btn = document.getElementById('theme-btn');
-    btn.innerText = document.body.classList.contains('light-mode') ? '☾' : '☀';
+    const htmlEl = document.documentElement;
+    const isLight = htmlEl.getAttribute('data-theme') === 'light';
+    const newTheme = isLight ? 'dark' : 'light';
+    
+    htmlEl.setAttribute('data-theme', newTheme);
+    localStorage.setItem('portfolio-theme', newTheme);
+    
+    const icon = document.querySelector('#theme-toggle i');
+    icon.className = newTheme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
 }
 
-function sendContact() {
-    const name = document.getElementById('form-name').value;
-    if(name) alert(`OK: Message from ${name} queued for transmission.`);
-    else alert("ERROR: Name required.");
-}
+const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
+document.documentElement.setAttribute('data-theme', savedTheme);
+document.querySelector('#theme-toggle i').className = savedTheme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
 
-/**
- * ------------------------------------------------------------------
- * APP LOGIC ENGINE
- * ------------------------------------------------------------------
- */
-async function launch(i) {
-    hideAll();
-    currentAppIndex = i;
-    const l = document.getElementById('lang-select').value;
-    const d = langDict[l] || langDict['en'];
-    const p = projects[i];
-    
-    document.getElementById("app-view").style.display = "flex";
-    document.getElementById("app-header").innerText = p.n;
-    document.getElementById("app-desc").innerText = p.f ? "// STATUS: ACTIVE" : "// STATUS: OFFLINE";
-
-    const ui = document.getElementById("ui");
-    ui.innerHTML = "";
-
-    if(!p.f) {
-        ui.innerHTML = `<div class="terminal-output" style="color:var(--alert)">${d.dev}</div>`;
-        return;
-    }
-
-    // --- FUNCTIONAL PROJECTS ---
-    
-    if(p.n === "IP Tracker") {
-        ui.innerHTML = `
-            <button class="btn action-btn" onclick="runIpScan()">${d.scan}</button>
-            <div style="margin-top:10px; height:2px; background:var(--border); width:100%"><div id="load-bar" style="height:100%; width:0%; background:var(--accent); transition:width 1s"></div></div>
-            <div class="terminal-output" id="out">${d.wait}</div>
-        `;
-    } 
-    
-    else if (p.n === "SHA-256 Hasher") {
-        ui.innerHTML = `<textarea id="i-text" rows="3" placeholder="${d.write}"></textarea><div class="terminal-output" id="r-out">${d.wait}</div>`;
-        document.getElementById('i-text').addEventListener('input', async function() {
-            if(!this.value) { document.getElementById('r-out').innerText = d.wait; return; }
-            const msgBuffer = new TextEncoder().encode(this.value);
-            const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
-            const hashArray = Array.from(new Uint8Array(hashBuffer));
-            document.getElementById('r-out').innerText = hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-        });
-    }
-
-    else if (p.n === "Base64 Encoder") {
-        ui.innerHTML = `<textarea id="i-text" rows="3" placeholder="${d.write}"></textarea><div class="terminal-output" id="r-out">${d.wait}</div>`;
-        document.getElementById('i-text').addEventListener('input', function() {
-            try {
-                document.getElementById('r-out').innerText = btoa(this.value);
-            } catch(e) {
-                document.getElementById('r-out').innerText = "Typing...";
-            }
-        });
-    }
-
-    else if (p.n === "Binary Converter") {
-        ui.innerHTML = `<input type="text" id="i-text" placeholder="${d.write}"><div class="terminal-output" id="r-out">${d.wait}</div>`;
-        document.getElementById('i-text').addEventListener('input', function() {
-            document.getElementById('r-out').innerText = this.value.split('').map(c=>c.charCodeAt(0).toString(2).padStart(8,'0')).join(' ');
-        });
-    }
-    
-    else if (p.n === "MAC Generator") {
-        ui.innerHTML = `<button class="btn action-btn" id="gen-mac">${d.gen}</button><div class="terminal-output" id="r-out">${d.wait}</div>`;
-        document.getElementById('gen-mac').onclick = function() {
-            const hex = "0123456789ABCDEF";
-            let mac = "XX:XX:XX:XX:XX:XX".replace(/X/g, () => hex.charAt(Math.floor(Math.random()*16)));
-            document.getElementById('r-out').innerText = `MAC ADDRESS:\n${mac}`;
-        };
-    }
-
-    else if (p.n === "Morse Code") {
-        ui.innerHTML = `<input id="i-text" placeholder="${d.write}"><div class="terminal-output" id="r-out">${d.wait}</div>`;
-        const m = {'A': '.-', 'B': '-...', 'C': '-.-.', 'D': '-..', 'E': '.', 'F': '..-.', 'G': '--.', 'H': '....', 'I': '..', 'J': '.---', 'K': '-.-', 'L': '.-..', 'M': '--', 'N': '-.', 'O': '---', 'P': '.--.', 'Q': '--.-', 'R': '.-.', 'S': '...', 'T': '-', 'U': '..-', 'V': '...-', 'W': '.--', 'X': '-..-', 'Y': '-.--', 'Z': '--..', '1':'.----', '2':'..---', '3':'...--', '4':'....-', '5':'.....', '0':'-----', ' ': '/'};
-        document.getElementById('i-text').addEventListener('input', function() {
-            document.getElementById('r-out').innerText = this.value.toUpperCase().split('').map(c => m[c] || '?').join(' ');
-        });
-    }
-
-    else if (p.n === "HEX Viewer") {
-        ui.innerHTML = `<input id="i-text" placeholder="${d.write}"><div class="terminal-output" id="r-out">${d.wait}</div>`;
-        document.getElementById('i-text').addEventListener('input', function() {
-            document.getElementById('r-out').innerText = this.value.split('').map(c => "0x" + c.charCodeAt(0).toString(16).toUpperCase()).join(' ');
-        });
-    }
-}
-
-/**
- * ------------------------------------------------------------------
- * EXTERNAL API LOGIC (IP SCANNER)
- * ------------------------------------------------------------------
- */
-window.runIpScan = async function() {
-    const l = document.getElementById('lang-select').value;
-    const d = langDict[l] || langDict['en'];
-    const out = document.getElementById('out');
-    const bar = document.getElementById('load-bar');
-    
-    out.innerText = d.tracking;
-    bar.style.width = "50%";
-    
-    try {
-        // Intentar obtener IP real
-        const response = await fetch('https://api.ipify.org?format=json');
-        const data = await response.json();
-        
-        bar.style.width = "100%";
-        setTimeout(() => {
-            out.innerHTML = `
-<span style="color:var(--text)">TARGET IDENTIFIED:</span>
-IP ADDR : ${data.ip}
-LOC     : Barcelona, Spain (Simulated)
-ISP     : ITB Secure Network
-STATUS  : EXPOSED
-            `;
-        }, 800);
-    } catch (e) {
-        // Fallback si falla (ej. AdBlock)
-        bar.style.width = "100%";
-        setTimeout(() => {
-            out.innerText = "CONNECTION ERROR: FIREWALL DETECTED.\nDISPLAYING LOCALHOST INFO.\n\nIP: 127.0.0.1";
-        }, 800);
-    }
-}
-
-// Inicialización
 changeLang();
-showHome();
+showView('home');
