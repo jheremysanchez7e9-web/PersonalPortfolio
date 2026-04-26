@@ -1,120 +1,42 @@
-# 🛡️ JHEREMY SÁNCHEZ // CYBER SECURITY PORTFOLIO
+# Jheremy Sánchez | Personal Portfolio & Tech Profile
 
-> **System ID:** `7E9-ITB-SEC`  
-> **Status:** `SYSTEM ONLINE`
+![Portfolio Preview](https://img.shields.io/badge/Status-Active-success)
+![Vanilla JS](https://img.shields.io/badge/JavaScript-Vanilla-F7DF1E?logo=javascript&logoColor=black)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
 
-This project is an interactive web interface designed to showcase the professional profile of a **Cybersecurity Specialist**. The application combines a **minimalist "Dark Luxury"** aesthetic with real technical functionalities, simulating an advanced terminal environment while maintaining the usability of a modern web application.
+Welcome to the source code of my personal portfolio. I am a **Higher Technician in Network Systems Administration (ASIR)** student at *Institut Tecnològic de Barcelona*, specializing in cybersecurity, network infrastructure, and system administration.
 
-The primary objective is to demonstrate competencies in both Web Development (Frontend) and programming logic oriented towards security tools and networking.
+This repository serves as both a landing page for recruiters and a technical demonstration of clean, framework-less frontend development.
 
----
-
-## 📋 Table of Contents
-
-1. [General Description](#-general-description)
-2. [Technical Features](#-technical-features)
-3. [Implemented Tools](#-implemented-tools)
-4. [Technology Stack](#-technology-stack)
-5. [Installation & Deployment](#-installation--deployment)
-6. [Project Structure](#-project-structure)
-7. [Author](#-author)
+🌐 **Live Demo:** [https://jheremysanchez7e9-web.github.io/PersonalPortfolio/](https://jheremysanchez7e9-web.github.io/PersonalPortfolio/)
 
 ---
 
-## 🧐 General Description
+## 🚀 Key Features
 
-The portfolio departs from traditional designs to offer an immersive experience. The user navigates through a control panel that centralizes profile information, featured projects, and functional tools in real-time.
+This project was built from scratch without external JavaScript frameworks (like React or Vue) to demonstrate a solid understanding of fundamental web technologies and DOM manipulation.
 
-The visual design prioritizes **elegant minimalism**: deep dark backgrounds (`#050505`), clean typography, and metallic gold accents (`#d4af37`), eliminating visual noise to focus attention on functionality and content.
-
----
-
-## 🚀 Technical Features
-
-### 🌐 Internationalization (i18n)
-A robust real-time translation system without page reloads.
-- **Supported Languages:** Spanish (ES), English (EN), Catalan (CA), French (FR), German (DE).
-- **Scope:** Translates the interface, tool descriptions, placeholders, and dynamically resets text animations.
-
-### ⚡ Interactivity & UI/UX
-- **TypeWriter Effect:** Automatic typing animation that rotates through profile roles (Student, Pentester, Network Admin, etc.).
-- **Responsive Design:** Fluid adaptation to mobile devices, tablets, and desktops.
-- **Light/Dark Mode:** Theme toggling with visual persistence.
-- **Dynamic Map:** **OpenStreetMap** integration (via iframe) for geolocation without private API key dependencies.
-
-### 🛡️ Network & Cryptography Logic
-Implementation of pure JavaScript logic (`Vanilla JS`) to execute real tasks within the client's browser.
-
----
-
-## 🛠 Implemented Tools
-
-The portfolio includes a set of functional "Web-Apps" integrated directly into the DOM:
-
-1.  **IP Tracker:**
-    * Connection to an external API (`api.ipify.org`) to retrieve the user's real public IP.
-    * Simulation of ISP analysis and geolocation.
-    * Error handling (try/catch) for ad blockers.
-
-2.  **SHA-256 Hasher:**
-    * Utilization of the browser's native **Web Crypto API** to generate secure hashes in real-time.
-
-3.  **MAC Generator:**
-    * Algorithm for creating valid random MAC addresses (Hexadecimal).
-
-4.  **Base64 Encoder:**
-    * Bidirectional conversion of text to Base64 format.
-
-5.  **Binary / Hexadecimal / Morse Converter:**
-    * Algorithms for transforming text strings into their respective representations.
-
----
-
-## 💻 Technology Stack
-
-The project has been developed following a **"Dependency-Free"** philosophy to ensure maximum performance and compatibility.
-
-* **Semantic HTML5:** Content structure.
-* **Modern CSS3:** CSS Variables (`:root`), Flexbox, CSS Grid, and Media Queries.
-* **JavaScript (ES6+):** Business logic, DOM manipulation, `async/await`, and `fetch API`.
-* **OpenStreetMap:** Open-source mapping service.
-
-No frameworks (React, Vue, Bootstrap) or heavy libraries (jQuery) were used, demonstrating a solid command of web fundamentals.
-
----
-
-## 📥 Installation & Deployment
-
-As a static site, it does not require backend server configuration (Node.js, PHP, Python).
-
-### Local Execution
-1.  **Clone the repository:**
-    ```bash
-    git clone [https://github.com/your-username/cyber-portfolio.git](https://github.com/your-username/cyber-portfolio.git)
-    ```
-2.  **Navigate to the folder:**
-    ```bash
-    cd cyber-portfolio
-    ```
-3.  **Run:**
-    Simply open the `index.html` file in your preferred web browser (Chrome, Firefox, Edge, Safari).
-
-### Customization
-To modify the profile picture, replace the file:
-* `img/logo.png` (A square image with a 1:1 ratio is recommended).
+- **Pseudo-SPA Architecture:** Seamless, instant navigation between views (Home, About, Projects, Contact) without page reloads, managed via Vanilla JS.
+- **Native Internationalization (i18n):** Fully functional multi-language support (English, Spanish, Catalan, French, German) built with a custom JS dictionary.
+- **Theme Management (Dark/Light Mode):** System implemented using CSS Custom Properties (`:root`), with user preference persistence via `localStorage`.
+- **Responsive Full-Screen UI:** Fluid layout using CSS Grid and Flexbox, adapted for all screen sizes with a modern, immersive 100vh display.
+- **Dynamic Typewriter Effect:** Custom recursive JavaScript function simulating terminal typing for job roles.
+- **Direct CV Integration:** Accessible one-click resume download natively integrated into the DOM.
+- **Client-Side Form Handling:** `mailto:` override logic to process contact requests safely without requiring a backend server.
 
 ---
 
 ## 📂 Project Structure
 
+The repository follows a strict, modular structure designed for easy deployment on GitHub Pages or any static web server:
+
 ```text
 /
-├── index.html          # Core structure and markup
-├── css/
-│   └── style.css       # Styles, theme variables, and animations
-├── js/
-│   ├── main.js         # Main logic, i18n, and tools
-│   └── date.js         # Independent module for date management
+├── index.html                  # Semantic HTML5 layout and views
+├── style.css                   # Theming, Layouts (Grid/Flexbox), Animations
+├── script.js                   # i18n logic, DOM manipulation, state management
+├── sanchezmorillojheremy_cv.pdf # Professional Resume
 ├── img/
-│   └── logo.png        # Profile/branding image
-└── README.md           # Project documentation
+│   └── logo.png                # Favicon / Brand identity
+└── README.md                   # Project documentation
