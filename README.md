@@ -27,6 +27,45 @@ This project was built from scratch without external JavaScript frameworks (like
 
 ---
 
+🤖 AI-Assisted Development Approach
+As an aspiring System and Network Administrator, I believe in utilizing modern tools to optimize workflows. This portfolio was conceptualized and refined using Advanced LLMs (Large Language Models) as architectural assistants.
+
+Instead of relying on AI to blindly generate code, I leveraged it in a professional pair-programming dynamic to:
+
+Enforce Best Practices: Ensure clean code, semantic HTML, and accessibility standards.
+
+Avoid Technical Debt: Architect a Vanilla JS solution that mimics a Single Page Application without the overhead of heavy frameworks or npm dependencies.
+
+Refine UI/UX: Perfect the CSS variables for the Light/Dark mode transitions and responsive breakpoints.
+
+This approach demonstrates my ability to integrate Artificial Intelligence into real-world IT workflows efficiently, precisely, and with a clear architectural vision.
+
+⚙️ How to Run
+Since this is a fully static website, no build tools or package managers are required.
+
+Clone the repository:
+
+Bash
+git clone [https://github.com/jheremysanchez7e9-web/PersonalPortfolio.git](https://github.com/jheremysanchez7e9-web/PersonalPortfolio.git)
+Navigate to the directory:
+
+Bash
+cd PersonalPortfolio
+Open index.html in your preferred web browser, or serve it using an extension like VS Code Live Server or Python's http.server:
+
+Bash
+python3 -m http.server 8000
+📫 Contact
+If you are looking for a dedicated IT intern to join your infrastructure, network, or cybersecurity team, feel free to reach out:
+
+Email: jheremysebastian17@gmail.com
+
+LinkedIn: linkedin.com/in/jheremysanchez
+
+Location: Barcelona, Spain
+
+---
+
 ## 📂 Project Structure
 
 The repository follows a strict, modular structure designed for easy deployment on GitHub Pages or any static web server:
@@ -38,5 +77,9 @@ The repository follows a strict, modular structure designed for easy deployment 
 ├── script.js                   # i18n logic, DOM manipulation, state management
 ├── sanchezmorillojheremy_cv.pdf # Professional Resume
 ├── img/
+
+
 │   └── logo.png                # Favicon / Brand identity
 └── README.md                   # Project documentation
+
+
