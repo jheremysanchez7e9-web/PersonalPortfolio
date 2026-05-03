@@ -1,4 +1,3 @@
-/* VARIABLES PARA TEMAS */
 :root {
     --bg: #0f172a;
     --container-bg: #1e293b;
@@ -23,7 +22,17 @@
 
 * { box-sizing: border-box; margin: 0; padding: 0; transition: background-color 0.3s, color 0.3s, border-color 0.3s; }
 
-/* --- CONFIGURACIÓN DE PANTALLA COMPLETA --- */
+/* ESTILO DEL CANVAS (ANTIGRAVEDAD) */
+#canvas-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Se sitúa detrás de todo */
+    pointer-events: none; /* Permite hacer clic a través de él */
+}
+
 body { 
     background: var(--bg); 
     color: var(--text); 
@@ -37,16 +46,16 @@ body {
     width: 100%; 
     max-width: 100%; 
     height: 100vh; 
-    background: var(--bg); 
+    background: transparent; /* Ahora el fondo es el Canvas */
     border: none; 
     border-radius: 0; 
     padding: 30px 5%; 
     display: grid; 
     grid-template-rows: auto 1fr auto;
-    box-shadow: none; 
+    box-shadow: none;
+    position: relative;
 }
 
-/* --- HEADER Y CONTROLES --- */
 .header { display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border); padding-bottom: 15px; }
 .brand h1 { font-size: 1.4rem; letter-spacing: 1px; }
 .brand span { font-family: monospace; color: var(--accent); font-size: 0.9rem; }
@@ -58,55 +67,41 @@ body {
 #lang-select { background: transparent; color: var(--text); border: 1px solid var(--border); padding: 5px; border-radius: 4px; outline: none; cursor: pointer; }
 #lang-select option { background: var(--container-bg); color: var(--text); }
 
-/* --- CONTENIDO PRINCIPAL --- */
 .main-content { overflow-y: auto; padding: 30px 0; scrollbar-width: thin; }
 .view-section { display: none; flex-direction: column; animation: fadeIn 0.4s ease; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-/* Vistas: Home */
 #home-view { text-align: center; justify-content: center; min-height: 100%; }
 .hero-title { font-size: 2.8rem; margin-bottom: 15px; font-weight: 800; }
 .hero-desc { max-width: 650px; margin: 0 auto 30px; opacity: 0.8; line-height: 1.6; font-size: 1.1rem; }
-.hero-btns { display: flex; gap: 15px; justify-content: center; }
+.hero-btns { display: flex; gap: 15px; justify-content: center; z-index: 10; }
 
-/* Vistas: Sobre Mi */
-.about-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 30px; max-width: 800px; margin: 0 auto; }
+.about-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 30px; max-width: 800px; margin: 0 auto; backdrop-filter: blur(5px); }
 .about-text { font-size: 1.1rem; line-height: 1.7; margin-bottom: 15px; opacity: 0.9; }
 .skills-tags { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 25px; }
 .skills-tags span { background: var(--container-bg); border: 1px solid var(--accent); color: var(--accent); padding: 8px 15px; border-radius: 6px; font-size: 0.9rem; font-weight: bold; }
 
-/* Vistas: Proyectos */
 .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
-.project-card { background: var(--card); border: 1px solid var(--border); padding: 25px; border-radius: 12px; display: flex; flex-direction: column; gap: 10px; }
+.project-card { background: var(--card); border: 1px solid var(--border); padding: 25px; border-radius: 12px; display: flex; flex-direction: column; gap: 10px; backdrop-filter: blur(5px); }
 .project-card h3 { color: var(--accent); font-size: 1.2rem; }
-.project-card p { opacity: 0.8; line-height: 1.5; margin-bottom: 10px; }
 
 .btn-link { text-decoration: none; color: var(--btn-text); background: var(--border); padding: 10px 15px; border-radius: 6px; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 8px; width: fit-content; font-weight: bold; }
 .btn-link:hover { background: var(--accent); color: var(--btn-text); }
 .disabled { opacity: 0.5; pointer-events: none; }
 
-/* Vistas: Contacto */
 .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 30px; }
-.info-card { display: flex; align-items: center; gap: 15px; text-decoration: none; color: var(--text); padding: 15px; background: var(--card); border-radius: 8px; margin-bottom: 12px; border: 1px solid var(--border); }
+.info-card { display: flex; align-items: center; gap: 15px; text-decoration: none; color: var(--text); padding: 15px; background: var(--card); border-radius: 8px; margin-bottom: 12px; border: 1px solid var(--border); backdrop-filter: blur(5px); }
 .info-card i { font-size: 1.5rem; color: var(--accent); }
-.info-card:hover { border-color: var(--accent); }
 
-input, textarea { width: 100%; padding: 12px; margin-bottom: 12px; background: var(--bg); border: 1px solid var(--border); color: var(--text); border-radius: 6px; font-family: inherit; }
-input::placeholder, textarea::placeholder { color: var(--text); opacity: 0.6; }
+input, textarea { width: 100%; padding: 12px; margin-bottom: 12px; background: rgba(15, 23, 42, 0.6); border: 1px solid var(--border); color: var(--text); border-radius: 6px; font-family: inherit; }
 
 .btn-primary { background: var(--accent); color: var(--btn-text); border: none; padding: 12px 25px; border-radius: 6px; font-weight: 700; cursor: pointer; letter-spacing: 1px; }
 .btn-outline { background: transparent; border: 2px solid var(--accent); color: var(--text); padding: 12px 25px; border-radius: 6px; cursor: pointer; font-weight: 700; }
-.btn-primary:hover, .btn-outline:hover { background: var(--accent-hover); color: var(--btn-text); border-color: var(--accent-hover); }
 
 .map-box { border-radius: 12px; overflow: hidden; border: 1px solid var(--border); height: 350px; }
 
-/* --- FOOTER --- */
-.footer { display: flex; justify-content: center; border-top: 1px solid var(--border); padding-top: 20px; }
+.footer { display: flex; justify-content: center; border-top: 1px solid var(--border); padding-top: 20px; background: transparent; }
 .nav-link { background: none; border: none; color: var(--text); padding: 10px 20px; cursor: pointer; opacity: 0.5; font-weight: bold; }
 .nav-link.active { opacity: 1; color: var(--accent); border-bottom: 2px solid var(--accent); }
 
-/* --- RESPONSIVE MOBILE --- */
-@media (max-width: 850px) { 
-    .contact-layout { grid-template-columns: 1fr; } 
-    .container { height: 100vh; padding: 20px 15px; } 
-}
+@media (max-width: 850px) { .contact-layout { grid-template-columns: 1fr; } .container { height: 100vh; } }
