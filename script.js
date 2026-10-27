@@ -9,8 +9,10 @@ const dict = {
         abP2: "Desarrollo experiencia práctica mediante laboratorios virtuales y Linux. Mi objetivo es la ciberseguridad defensiva.",
         btnCV: "Descargar CV",
         p1T: "Calculadora Energética", p1D: "Aplicación interactiva para calcular ahorro eléctrico.",
-        p2T: "Infraestructura Debian", p2D: "Servicios DNS, Apache y DHCP en Linux Server.",
-        pOpen: "Abrir Proyecto", pLocal: "Proyecto Local",
+        p2T: "Projecte Transversal ASIX", p2D: "Infraestructura integradora de sistemas, servicios de red y seguridad.",
+        p3T: "The Cryptic Club", p3D: "Proyecto enfocado en ciberseguridad, criptografía y análisis de vulnerabilidades.",
+        p4T: "The Daily Exploit", p4D: "Plataforma de análisis de vulnerabilidades, exploits y noticias de ciberseguridad.",
+        pOpen: "Abrir Proyecto", pRepo: "Repositorio", pLocal: "Proyecto Local",
         cT: "Contacto Directo", fName: "Nombre completo", fMsg: "¿En qué puedo ayudarte?", btnS: "Enviar vía Email",
         nH: "INICIO", nA: "SOBRE MÍ", nP: "PROYECTOS", nC: "CONTACTO"
     },
@@ -24,8 +26,10 @@ const dict = {
         abP2: "I develop practical experience through virtual labs and Linux. My goal is defensive cybersecurity.",
         btnCV: "Download CV",
         p1T: "Energy Calculator", p1D: "Interactive app to calculate electricity savings.",
-        p2T: "Debian Infrastructure", p2D: "DNS, Apache, and DHCP services in Linux Server.",
-        pOpen: "Open Project", pLocal: "Local Project",
+        p2T: "ASIX Cross-Curricular Project", p2D: "Integrative infrastructure for systems, network services, and security.",
+        p3T: "The Cryptic Club", p3D: "Project focused on cybersecurity, cryptography, and vulnerability analysis.",
+        p4T: "The Daily Exploit", p4D: "Platform for vulnerability analysis, exploits, and cybersecurity news.",
+        pOpen: "Open Project", pRepo: "Repository", pLocal: "Local Project",
         cT: "Direct Contact", fName: "Full Name", fMsg: "How can I help you?", btnS: "Send via Email",
         nH: "HOME", nA: "ABOUT ME", nP: "PROJECTS", nC: "CONTACT"
     },
@@ -35,12 +39,14 @@ const dict = {
         heroD: "Estudiant d'ASIX especialitzat en ciberseguretat, configuració de xarxes i administració de sistemes.",
         btnW: "Veure Projectes", btnC: "Contactar",
         abT: "Sobre el meu perfil",
-        abP1: "Sóc estudiant de 2n d'ASIX a l'Institut Tecnològic de Barcelona, con un fort enfocament en ciberseguretat i xarxes.",
+        abP1: "Sóc estudiant de 2n any d'ASIX a l'Institut Tecnològic de Barcelona, amb un fort enfocament en ciberseguretat i xarxes.",
         abP2: "Desenvolupo experiència pràctica mitjançant laboratoris virtuals i Linux. El meu objectiu és la ciberseguretat defensiva.",
         btnCV: "Descarregar CV",
         p1T: "Calculadora Energètica", p1D: "Aplicació interactiva per calcular l'estalvi elèctric.",
-        p2T: "Infraestructura Debian", p2D: "Serveis DNS, Apache i DHCP en Linux Server.",
-        pOpen: "Obrir Projecte", pLocal: "Projecte Local",
+        p2T: "Projecte Transversal ASIX", p2D: "Infraestructura integradora de sistemes, serveis de xarxa i seguretat.",
+        p3T: "The Cryptic Club", p3D: "Projecte enfocat en ciberseguretat, criptografia i anàlisi de vulnerabilitats.",
+        p4T: "The Daily Exploit", p4D: "Plataforma d'anàlisi de vulnerabilitats, exploits i notícies de ciberseguretat.",
+        pOpen: "Obrir Projecte", pRepo: "Repositori", pLocal: "Projecte Local",
         cT: "Contacte Directe", fName: "Nom complet", fMsg: "En què et puc ajudar?", btnS: "Enviar via Email",
         nH: "INICI", nA: "SOBRE MI", nP: "PROJECTES", nC: "CONTACTE"
     },
@@ -50,12 +56,14 @@ const dict = {
         heroD: "Étudiant ASIR spécialisé en cybersécurité, configuration réseau et administration système.",
         btnW: "Voir les projets", btnC: "Contact",
         abT: "À propos de mon profil",
-        abP1: "Je suis étudiant en 2n ASIR à l'Institut Tecnològic de Barcelona, avec un fort accent sur la cybersécurité.",
+        abP1: "Je suis étudiant en première année ASIR à l'Institut Tecnològic de Barcelona, avec un fort accent sur la cybersécurité.",
         abP2: "Je développe une expérience pratique via des laboratoires virtuels et Linux. Mon objectif est la cybersécurité défensive.",
         btnCV: "Télécharger CV",
         p1T: "Calculateur Énergie", p1D: "Application interactive pour calculer l'économie d'électricité.",
-        p2T: "Infrastructure Debian", p2D: "Services DNS, Apache et DHCP sous Linux Server.",
-        pOpen: "Ouvrir le projet", pLocal: "Projet Local",
+        p2T: "Projet Transversal ASIX", p2D: "Infrastructure intégratrice pour les systèmes, services réseau et sécurité.",
+        p3T: "The Cryptic Club", p3D: "Projet axé sur la cybersécurité, la cryptographie et l'analyse des vulnérabilités.",
+        p4T: "The Daily Exploit", p4D: "Plateforme d'analyse des vulnérabilités, d'exploits et d'actualités en cybersécurité.",
+        pOpen: "Ouvrir le projet", pRepo: "Dépôt", pLocal: "Projet Local",
         cT: "Contact Direct", fName: "Nom complet", fMsg: "Comment puis-je vous aider?", btnS: "Envoyer par e-mail",
         nH: "ACCUEIL", nA: "À PROPOS", nP: "PROJETS", nC: "CONTACT"
     },
@@ -65,12 +73,14 @@ const dict = {
         heroD: "ASIR-Student spezialisiert auf Cybersicherheit, Netzwerkkonfiguration und Systemadministration.",
         btnW: "Projekte sehen", btnC: "Kontakt",
         abT: "Über mein Profil",
-        abP1: "Ich bin ASIR-Student im 2n am Institut Tecnològic de Barcelona mit Fokus auf Cybersicherheit.",
+        abP1: "Ich bin ASIR-Student im 2n Jahr am Institut Tecnològic de Barcelona mit Fokus auf Cybersicherheit.",
         abP2: "Ich sammle praktische Erfahrung durch virtuelle Labore und Linux. Mein Ziel ist defensive Cybersicherheit.",
         btnCV: "CV Herunterladen",
         p1T: "Energie-Rechner", p1D: "Interaktive App zur Berechnung von Stromersparnissen.",
-        p2T: "Debian Infrastruktur", p2D: "DNS-, Apache- und DHCP-Dienste in Linux Server.",
-        pOpen: "Projekt öffnen", pLocal: "Lokales Projekt",
+        p2T: "ASIX-Projekt", p2D: "Integrative Infrastruktur für Systeme, Netzdienste und Sicherheit.",
+        p3T: "The Cryptic Club", p3D: "Projekt mit Schwerpunkt auf Cybersicherheit, Kryptographie und Schwachstellenanalyse.",
+        p4T: "The Daily Exploit", p4D: "Plattform für Schwachstellenanalyse, Exploits und Cybersicherheits-News.",
+        pOpen: "Projekt öffnen", pRepo: "Repository", pLocal: "Lokales Projekt",
         cT: "Direkter Kontakt", fName: "Vollständiger Name", fMsg: "Wie kann ich helfen?", btnS: "Per E-Mail senden",
         nH: "START", nA: "ÜBER MICH", nP: "PROJEKTE", nC: "KONTAKT"
     }
@@ -87,12 +97,22 @@ function changeLang() {
     document.getElementById('l-ab-p1').innerText = d.abP1;
     document.getElementById('l-ab-p2').innerText = d.abP2;
     document.getElementById('l-btn-cv').innerText = d.btnCV;
+    
+    // Proyectos
     document.getElementById('l-p1-title').innerText = d.p1T;
     document.getElementById('l-p1-desc').innerText = d.p1D;
     document.getElementById('l-p2-title').innerText = d.p2T;
     document.getElementById('l-p2-desc').innerText = d.p2D;
+    document.getElementById('l-p3-title').innerText = d.p3T;
+    document.getElementById('l-p3-desc').innerText = d.p3D;
+    document.getElementById('l-p4-title').innerText = d.p4T;
+    document.getElementById('l-p4-desc').innerText = d.p4D;
+    
     document.getElementById('l-p-open-1').innerText = d.pOpen;
-    document.getElementById('l-p-local').innerText = d.pLocal;
+    document.getElementById('l-p-open-2').innerText = d.pRepo;
+    document.getElementById('l-p-open-3').innerText = d.pRepo;
+    document.getElementById('l-p-open-4').innerText = d.pRepo;
+    
     document.getElementById('l-c-title').innerText = d.cT;
     document.getElementById('f-name').placeholder = d.fName;
     document.getElementById('f-msg').placeholder = d.fMsg;
@@ -103,98 +123,3 @@ function changeLang() {
     document.getElementById('n-c').innerText = d.nC;
     startTypewriter(d.roles);
 }
-
-const canvas = document.getElementById('canvas-bg');
-const ctx = canvas.getContext('2d');
-let particles = [];
-const mouse = { x: null, y: null, radius: 100 };
-
-window.addEventListener('mousemove', (e) => { mouse.x = e.x; mouse.y = e.y; });
-function resizeCanvas() { canvas.width = window.innerWidth; canvas.height = window.innerHeight; }
-window.addEventListener('resize', resizeCanvas);
-resizeCanvas();
-
-class Particle {
-    constructor() {
-        this.x = Math.random() * canvas.width;
-        this.y = Math.random() * canvas.height;
-        this.size = Math.random() * 2 + 1;
-        this.vx = (Math.random() - 0.5) * 0.4;
-        this.vy = (Math.random() - 0.5) * 0.4;
-    }
-    draw() {
-        ctx.fillStyle = getComputedStyle(document.documentElement).getPropertyValue('--accent');
-        ctx.globalAlpha = 0.4;
-        ctx.beginPath();
-        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
-        ctx.fill();
-    }
-    update() {
-        this.x += this.vx; this.y += this.vy;
-        if (this.x < 0) this.x = canvas.width; if (this.x > canvas.width) this.x = 0;
-        if (this.y < 0) this.y = canvas.height; if (this.y > canvas.height) this.y = 0;
-        const dx = mouse.x - this.x;
-        const dy = mouse.y - this.y;
-        const distance = Math.sqrt(dx*dx + dy*dy);
-        if (distance < mouse.radius) {
-            this.x -= (dx / distance) * 2;
-            this.y -= (dy / distance) * 2;
-        }
-    }
-}
-
-function initParticles() {
-    particles = [];
-    for (let i = 0; i < 120; i++) particles.push(new Particle());
-}
-initParticles();
-function animate() {
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    particles.forEach(p => { p.update(); p.draw(); });
-    requestAnimationFrame(animate);
-}
-animate();
-
-let twTime;
-function startTypewriter(roles) {
-    const el = document.getElementById('typewriter');
-    clearTimeout(twTime);
-    let rIdx = 0, cIdx = 0, isDel = false;
-    function tick() {
-        const current = roles[rIdx];
-        el.innerText = current.substring(0, cIdx + (isDel ? -1 : 1));
-        cIdx += isDel ? -1 : 1;
-        let speed = isDel ? 50 : 120;
-        if(!isDel && cIdx === current.length) { speed = 2000; isDel = true; }
-        else if(isDel && cIdx === 0) { isDel = false; rIdx = (rIdx + 1) % roles.length; speed = 500; }
-        twTime = setTimeout(tick, speed);
-    }
-    tick();
-}
-
-function showView(id) {
-    document.querySelectorAll('.view-section').forEach(v => v.style.display = 'none');
-    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
-    document.getElementById(id + '-view').style.display = 'flex';
-    document.getElementById('n-' + id.charAt(0)).classList.add('active');
-}
-
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-    e.preventDefault();
-    const name = document.getElementById('f-name').value;
-    const msg = document.getElementById('f-msg').value;
-    const email = "jheremysebastian17@gmail.com";
-    window.location.href = `mailto:${email}?subject=Portfolio Contact&body=Nombre: ${name}%0AMensaje: ${msg}`;
-});
-
-function toggleTheme() {
-    const htmlEl = document.documentElement;
-    const newTheme = htmlEl.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
-    htmlEl.setAttribute('data-theme', newTheme);
-    localStorage.setItem('portfolio-theme', newTheme);
-}
-
-const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
-document.documentElement.setAttribute('data-theme', savedTheme);
-changeLang();
-showView('home');
