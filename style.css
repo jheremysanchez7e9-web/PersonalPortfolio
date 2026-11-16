@@ -88,6 +88,29 @@ body {
 .timeline i { color: var(--accent); font-size: 1.2rem; width: 1.5rem; text-align: center; margin-top: 3px; }
 .timeline small { opacity: 0.8; }
 
+.certs-head, .certs-more { max-width: 1000px; }
+#certs-view { gap: 20px; }
+#cert-grid { grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); }
+.cert-card { align-items: flex-start; }
+.cert-img { width: 120px; height: 120px; object-fit: contain; align-self: center; }
+.cert-meta { opacity: 0.8; font-size: 0.9rem; flex: 0 !important; }
+button.btn-link { cursor: pointer; font-family: inherit; }
+
+/* Certificate sheet: hidden on screen, the only thing visible when printing to PDF */
+#cert-print { display: none; }
+@media print {
+    body { height: auto; overflow: visible; background: #fff; }
+    body > *:not(#cert-print) { display: none !important; }
+    #cert-print { display: block; color: #111; text-align: center; padding: 40px; font-size: 12pt; line-height: 1.6; }
+    #cert-print img { width: 220px; height: 220px; object-fit: contain; margin-bottom: 20px; }
+    #cert-print h1 { font-size: 26pt; margin: 8px 0 20px; }
+    #cert-print .pr-kind { text-transform: uppercase; letter-spacing: 3px; font-size: 10pt; color: #555; }
+    #cert-print .pr-line { font-size: 14pt; }
+    #cert-print .pr-desc { margin: 24px auto 12px; max-width: 520px; text-align: justify; }
+    #cert-print .pr-skills { font-weight: bold; margin-bottom: 30px; }
+    #cert-print .pr-verify { font-size: 10pt; color: #333; border-top: 1px solid #999; padding-top: 14px; overflow-wrap: anywhere; }
+}
+
 .tags { display: flex; gap: 8px; flex-wrap: wrap; }
 .tags > span { background: var(--container-bg); border: 1px solid var(--accent); color: var(--accent); padding: 4px 10px; border-radius: 6px; font-size: 0.75rem; font-weight: bold; display: flex; align-items: center; gap: 6px; }
 .skills-tags { gap: 10px; margin-top: 25px; }
@@ -129,7 +152,7 @@ input, textarea {
     .container { padding: 20px 5%; }
     .brand h1 { font-size: 1.1rem; }
     .top-controls { gap: 10px; }
-    .nav-link { padding: 10px 8px; font-size: 0.75rem; }
+    .nav-link { padding: 8px 4px; font-size: 0.64rem; }
     .about-card, .project-card { padding: 20px; }
 }
 
