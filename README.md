@@ -21,6 +21,7 @@ Built from scratch with no frameworks, build tools, or npm dependencies.
 - **Responsive layout:** CSS Grid and Flexbox, full-height on desktop and mobile.
 - **Accessibility:** real links for navigation, labelled controls, visible keyboard focus, and animations disabled under `prefers-reduced-motion`.
 - **Contact form without a backend:** builds a correctly encoded `mailto:` link.
+- **Education & certifications:** timeline in the About view with a direct link to the certifications on LinkedIn.
 - **CV download:** one-click PDF.
 
 ---
