@@ -8,6 +8,12 @@ const dict = {
         abP1: "Soy estudiante de segundo año de ASIR en el Institut Tecnològic de Barcelona, con un fuerte enfoque en ciberseguridad y redes.",
         abP2: "Desarrollo experiencia práctica mediante laboratorios virtuales y Linux. Mi objetivo es la ciberseguridad defensiva.",
         skSec: "Ciberseguridad Defensiva",
+        edT: "Formación y certificaciones",
+        ed1T: "Grado Superior ASIR · Perfil Ciberseguridad", ed1S: "Institut Tecnològic de Barcelona · En curso",
+        ed2T: "Bachillerato",
+        certT: "Certificaciones", certS: "Insignias digitales verificables, sincronizadas automáticamente desde Credly.", btnCert: "Ver certificaciones", nCe: "CERTIFICADOS",
+        ceVerify: "Verificar", cePdf: "Ver PDF", ceSave: "Guardar PDF", ceProfile: "Perfil en Credly", ceLinkedin: "Certificaciones en LinkedIn", ceEmpty: "No se pudieron cargar las certificaciones. Puedes verlas en Credly.",
+        prKind: "Insignia digital verificada", prTo: "Otorgada a", prBy: "Emitida por", prVerify: "Verificación",
         btnCV: "Descargar CV",
         p1T: "Calculadora Energética", p1D: "Aplicación web interactiva para calcular el ahorro eléctrico.",
         p2T: "Projecte Transversal ASIX", p2D: "Diseño en equipo de un CPD sostenible: infraestructura IT, VLANs, firewall, SAIs y seguridad física y lógica.",
@@ -28,6 +34,12 @@ const dict = {
         abP1: "I am a second-year Network Systems Administration (ASIR) student at the Institut Tecnològic de Barcelona, with a strong focus on cybersecurity and networks.",
         abP2: "I develop practical experience through virtual labs and Linux. My goal is defensive cybersecurity.",
         skSec: "Defensive Cybersecurity",
+        edT: "Education & certifications",
+        ed1T: "Higher Vocational Training in Network Systems Administration (ASIR) · Cybersecurity", ed1S: "Institut Tecnològic de Barcelona · In progress",
+        ed2T: "High School Diploma",
+        certT: "Certifications", certS: "Verifiable digital badges, synced automatically from Credly.", btnCert: "View certifications", nCe: "CERTIFICATES",
+        ceVerify: "Verify", cePdf: "View PDF", ceSave: "Save PDF", ceProfile: "Credly profile", ceLinkedin: "Certifications on LinkedIn", ceEmpty: "The certifications could not be loaded. You can view them on Credly.",
+        prKind: "Verified digital badge", prTo: "Awarded to", prBy: "Issued by", prVerify: "Verification",
         btnCV: "Download CV",
         p1T: "Energy Calculator", p1D: "Interactive web app to calculate electricity savings.",
         p2T: "ASIX Cross-Curricular Project", p2D: "Team design of a sustainable data center: IT infrastructure, VLANs, firewall, UPS systems, and physical and logical security.",
@@ -48,6 +60,12 @@ const dict = {
         abP1: "Sóc estudiant de segon any d'ASIX a l'Institut Tecnològic de Barcelona, amb un fort enfocament en ciberseguretat i xarxes.",
         abP2: "Desenvolupo experiència pràctica mitjançant laboratoris virtuals i Linux. El meu objectiu és la ciberseguretat defensiva.",
         skSec: "Ciberseguretat Defensiva",
+        edT: "Formació i certificacions",
+        ed1T: "Grau Superior ASIX · Perfil Ciberseguretat", ed1S: "Institut Tecnològic de Barcelona · En curs",
+        ed2T: "Batxillerat",
+        certT: "Certificacions", certS: "Insígnies digitals verificables, sincronitzades automàticament des de Credly.", btnCert: "Veure certificacions", nCe: "CERTIFICATS",
+        ceVerify: "Verificar", cePdf: "Veure PDF", ceSave: "Desar PDF", ceProfile: "Perfil a Credly", ceLinkedin: "Certificacions a LinkedIn", ceEmpty: "No s'han pogut carregar les certificacions. Les pots veure a Credly.",
+        prKind: "Insígnia digital verificada", prTo: "Atorgada a", prBy: "Emesa per", prVerify: "Verificació",
         btnCV: "Descarregar CV",
         p1T: "Calculadora Energètica", p1D: "Aplicació web interactiva per calcular l'estalvi elèctric.",
         p2T: "Projecte Transversal ASIX", p2D: "Disseny en equip d'un CPD sostenible: infraestructura IT, VLANs, tallafoc, SAIs i seguretat física i lògica.",
@@ -68,6 +86,12 @@ const dict = {
         abP1: "Je suis étudiant en deuxième année d'administration de systèmes et réseaux (ASIR) à l'Institut Tecnològic de Barcelona, avec un fort accent sur la cybersécurité.",
         abP2: "Je développe une expérience pratique via des laboratoires virtuels et Linux. Mon objectif est la cybersécurité défensive.",
         skSec: "Cybersécurité Défensive",
+        edT: "Formation et certifications",
+        ed1T: "Formation supérieure en administration de systèmes et réseaux (ASIR) · Cybersécurité", ed1S: "Institut Tecnològic de Barcelona · En cours",
+        ed2T: "Baccalauréat",
+        certT: "Certifications", certS: "Badges numériques vérifiables, synchronisés automatiquement depuis Credly.", btnCert: "Voir les certifications", nCe: "CERTIFICATS",
+        ceVerify: "Vérifier", cePdf: "Voir le PDF", ceSave: "Enregistrer en PDF", ceProfile: "Profil Credly", ceLinkedin: "Certifications sur LinkedIn", ceEmpty: "Impossible de charger les certifications. Vous pouvez les consulter sur Credly.",
+        prKind: "Badge numérique vérifié", prTo: "Décerné à", prBy: "Délivré par", prVerify: "Vérification",
         btnCV: "Télécharger CV",
         p1T: "Calculateur Énergie", p1D: "Application web interactive pour calculer les économies d'électricité.",
         p2T: "Projet Transversal ASIX", p2D: "Conception en équipe d'un centre de données durable : infrastructure IT, VLAN, pare-feu, onduleurs et sécurité physique et logique.",
@@ -88,6 +112,12 @@ const dict = {
         abP1: "Ich studiere im zweiten Jahr Netzwerk- und Systemadministration (ASIR) am Institut Tecnològic de Barcelona mit Fokus auf Cybersicherheit.",
         abP2: "Ich sammle praktische Erfahrung durch virtuelle Labore und Linux. Mein Ziel ist defensive Cybersicherheit.",
         skSec: "Defensive Cybersicherheit",
+        edT: "Ausbildung & Zertifikate",
+        ed1T: "Höhere Berufsausbildung Netzwerk- und Systemadministration (ASIR) · Cybersicherheit", ed1S: "Institut Tecnològic de Barcelona · Laufend",
+        ed2T: "Abitur",
+        certT: "Zertifikate", certS: "Verifizierbare digitale Badges, automatisch mit Credly synchronisiert.", btnCert: "Zertifikate ansehen", nCe: "ZERTIFIKATE",
+        ceVerify: "Verifizieren", cePdf: "PDF ansehen", ceSave: "Als PDF speichern", ceProfile: "Credly-Profil", ceLinkedin: "Zertifikate auf LinkedIn", ceEmpty: "Die Zertifikate konnten nicht geladen werden. Sie sind auf Credly einsehbar.",
+        prKind: "Verifiziertes digitales Badge", prTo: "Verliehen an", prBy: "Ausgestellt von", prVerify: "Verifizierung",
         btnCV: "CV Herunterladen",
         p1T: "Energie-Rechner", p1D: "Interaktive Web-App zur Berechnung von Stromersparnissen.",
         p2T: "ASIX-Projekt", p2D: "Teamentwurf eines nachhaltigen Rechenzentrums: IT-Infrastruktur, VLANs, Firewall, USV-Anlagen sowie physische und logische Sicherheit.",
@@ -120,9 +150,66 @@ function changeLang() {
         el.setAttribute('aria-label', d[el.dataset.i18nPh]);
     });
 
+    renderCerts();
     startTypewriter(d.roles);
 }
 langSelect.addEventListener('change', changeLang);
+
+/* ---------- Certifications (certs.json is generated from Credly by a GitHub Action) ---------- */
+let certs = null; // null = still loading, false = failed
+const t = (key) => dict[langSelect.value][key];
+
+function el(tag, props = {}, ...children) {
+    const node = Object.assign(document.createElement(tag), props);
+    node.append(...children);
+    return node;
+}
+const icon = (cls) => el('i', { className: cls, ariaHidden: 'true' });
+const certDate = (c) => (c.issued
+    ? new Date(c.issued + 'T12:00:00').toLocaleDateString(langSelect.value, { year: 'numeric', month: 'long' })
+    : '');
+
+function renderCerts() {
+    const grid = document.getElementById('cert-grid');
+    if (certs === null) return;
+    if (!certs) { grid.replaceChildren(el('p', { className: 'about-text' }, t('ceEmpty'))); return; }
+
+    grid.replaceChildren(...certs.map((c) => {
+        const pdf = c.pdf
+            ? el('a', { className: 'btn-link alt', href: c.pdf, target: '_blank', rel: 'noopener' }, icon('fas fa-file-pdf'), ' ', t('cePdf'))
+            : el('button', { className: 'btn-link alt', type: 'button', onclick: () => printCert(c) }, icon('fas fa-file-pdf'), ' ', t('ceSave'));
+        return el('article', { className: 'project-card cert-card' },
+            c.image ? el('img', { className: 'cert-img', src: c.image, alt: '', loading: 'lazy', width: 120, height: 120 }) : '',
+            el('h3', {}, c.title),
+            el('p', { className: 'cert-meta' }, [c.issuer, certDate(c)].filter(Boolean).join(' · ')),
+            el('div', { className: 'tags' }, ...c.skills.slice(0, 5).map((s) => el('span', {}, s))),
+            el('div', { className: 'card-links' },
+                el('a', { className: 'btn-link', href: c.url, target: '_blank', rel: 'noopener' }, icon('fas fa-circle-check'), ' ', t('ceVerify')),
+                pdf));
+    }));
+}
+
+// Credly offers no public PDF, so the browser's "Save as PDF" prints a one-page summary with the verification link.
+function printCert(c) {
+    document.getElementById('cert-print').replaceChildren(
+        c.image ? el('img', { src: c.image, alt: '' }) : '',
+        el('p', { className: 'pr-kind' }, t('prKind')),
+        el('h1', {}, c.title),
+        el('p', { className: 'pr-line' }, `${t('prTo')} `, el('strong', {}, c.recipient)),
+        el('p', { className: 'pr-line' }, `${t('prBy')} `, el('strong', {}, c.issuer), c.issued ? ` · ${certDate(c)}` : ''),
+        el('p', { className: 'pr-desc' }, c.description),
+        el('p', { className: 'pr-skills' }, c.skills.join(' · ')),
+        el('p', { className: 'pr-verify' }, `${t('prVerify')}: ${c.url}`));
+    const img = document.querySelector('#cert-print img');
+    // Wait for the badge image, otherwise the PDF may be printed without it.
+    if (img && !img.complete) { img.onload = img.onerror = () => window.print(); } else { window.print(); }
+}
+
+fetch('certs.json')
+    .then((res) => (res.ok ? res.json() : Promise.reject(new Error(res.status))))
+    .then((data) => { certs = Array.isArray(data) ? data : false; })
+    .catch(() => { certs = false; })
+    .then(renderCerts);
 
 /* ---------- Particle background ---------- */
 const canvas = document.getElementById('canvas-bg');
@@ -196,7 +283,7 @@ function startTypewriter(roles) {
 }
 
 /* ---------- Views (driven by the URL hash so links and the back button work) ---------- */
-const views = ['home', 'about', 'projects', 'contact'];
+const views = ['home', 'about', 'projects', 'certs', 'contact'];
 function showView() {
     const hash = location.hash.slice(1);
     const id = views.includes(hash) ? hash : 'home';

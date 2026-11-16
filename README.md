@@ -15,12 +15,14 @@ Source code of my personal portfolio. I am a **Network Systems Administration (A
 
 Built from scratch with no frameworks, build tools, or npm dependencies.
 
-- **Hash-based views:** Home, About, Projects, and Contact switch instantly without reloads. Each view has its own URL (`#projects`, `#contact`…), so links can be shared and the browser back button works.
+- **Hash-based views:** Home, About, Projects, Certifications, and Contact switch instantly without reloads. Each view has its own URL (`#projects`, `#contact`…), so links can be shared and the browser back button works.
 - **Internationalization (i18n):** Spanish, English, Catalan, French, and German from a single JS dictionary, wired to the markup through `data-i18n` attributes. The language is detected from the browser and remembered.
 - **Dark / light theme:** CSS custom properties with the preference stored in `localStorage`.
 - **Responsive layout:** CSS Grid and Flexbox, full-height on desktop and mobile.
 - **Accessibility:** real links for navigation, labelled controls, visible keyboard focus, and animations disabled under `prefers-reduced-motion`.
 - **Contact form without a backend:** builds a correctly encoded `mailto:` link.
+- **Certifications synced from Credly:** a GitHub Action (`.github/workflows/certs.yml`) runs `scripts/update-certs.mjs` daily and regenerates `certs.json` from the public Credly profile. Each badge is shown as a card with a verification link and can be saved as a one-page PDF. To link an official PDF instead, add it as `certs/<slug>.pdf` (the slug is in `certs.json`).
+- **Education timeline** in the About view.
 - **CV download:** one-click PDF.
 
 ---
@@ -42,7 +44,10 @@ Built from scratch with no frameworks, build tools, or npm dependencies.
 /
 ├── index.html              # Layout and views
 ├── style.css               # Theming, layout, animations
-├── script.js               # i18n, view routing, theme, contact form
+├── script.js               # i18n, view routing, theme, certifications, contact form
+├── certs.json              # Generated from Credly (do not edit by hand)
+├── scripts/update-certs.mjs # Credly → certs.json
+├── .github/workflows/certs.yml # Daily sync
 ├── jheremysanchezCVe.pdf   # Resume
 ├── img/
 │   └── logo.png            # Favicon

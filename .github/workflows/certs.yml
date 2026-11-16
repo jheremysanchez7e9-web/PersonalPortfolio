@@ -1,0 +1,37 @@
+name: Update certifications
+
+# Syncs certs.json with the public Credly profile once a day,
+# and on demand from the Actions tab ("Run workflow").
+on:
+  schedule:
+    - cron: '17 5 * * *'
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-certs
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node scripts/update-certs.mjs
+      - name: Commit certs.json if it changed
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add certs.json
+          if git diff --staged --quiet; then
+            echo "No changes in certs.json"
+          else
+            git commit -m "chore: update certifications from Credly"
+            git push
+          fi
