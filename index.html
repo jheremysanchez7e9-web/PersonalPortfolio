@@ -3,27 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jheremy Sánchez | Portfolio ASIX</title>
+    <title>Jheremy Sánchez | Sistemas, Redes y Ciberseguridad</title>
+    <meta name="description" content="Portfolio de Jheremy Sánchez: administración de sistemas, redes y ciberseguridad defensiva. Proyectos, perfil y contacto.">
+    <meta name="theme-color" content="#0f172a">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Jheremy Sánchez | Sistemas, Redes y Ciberseguridad">
+    <meta property="og:description" content="Administración de sistemas, redes y ciberseguridad defensiva. Proyectos, perfil y contacto.">
+    <meta property="og:url" content="https://jheremysanchez7e9-web.github.io/PersonalPortfolio/">
+    <meta property="og:image" content="https://jheremysanchez7e9-web.github.io/PersonalPortfolio/img/logo.png">
     <link rel="icon" type="image/png" href="img/logo.png">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <canvas id="canvas-bg"></canvas>
+    <canvas id="canvas-bg" aria-hidden="true"></canvas>
 
     <div class="container">
         <header class="header">
             <div class="brand">
                 <h1>JHEREMY SÁNCHEZ</h1>
-                <span id="typewriter"></span>
+                <span id="typewriter" aria-hidden="true"></span>
             </div>
             <div class="top-controls">
-                <button id="theme-toggle" onclick="toggleTheme()" class="icon-btn">
-                    <i class="fas fa-sun"></i>
+                <button id="theme-toggle" class="icon-btn" type="button" data-i18n-aria="aTheme">
+                    <i class="fas fa-sun" aria-hidden="true"></i>
                 </button>
                 <div class="lang-control">
-                    <i class="fas fa-globe"></i>
-                    <select id="lang-select" onchange="changeLang()">
+                    <i class="fas fa-globe" aria-hidden="true"></i>
+                    <select id="lang-select" data-i18n-aria="aLang">
                         <option value="es">ES</option>
                         <option value="en">EN</option>
                         <option value="ca">CA</option>
@@ -37,106 +44,131 @@
         <main class="main-content">
             <!-- INICIO -->
             <section id="home-view" class="view-section">
-                <h2 class="hero-title" id="l-hero-title">System & Network Administrator</h2>
-                <p class="hero-desc" id="l-hero-desc">Estudiante de ASIR especializado en ciberseguridad, configuración de redes y administración de sistemas.</p>
+                <h2 class="hero-title" data-i18n="heroT"></h2>
+                <p class="hero-desc" data-i18n="heroD"></p>
                 <div class="hero-btns">
-                    <button class="btn-primary" onclick="showView('projects')" id="l-btn-work">Ver Proyectos</button>
-                    <button class="btn-outline" onclick="showView('contact')" id="l-btn-contact">Contactar</button>
+                    <a class="btn-primary" href="#projects" data-i18n="btnW"></a>
+                    <a class="btn-outline" href="#contact" data-i18n="btnC"></a>
                 </div>
             </section>
 
             <!-- SOBRE MÍ -->
-            <section id="about-view" class="view-section">
+            <section id="about-view" class="view-section" hidden>
                 <div class="about-card">
-                    <h2 id="l-ab-title" style="color: var(--accent); margin-bottom: 20px; font-size: 1.8rem;">Sobre mi perfil</h2>
-                    <p id="l-ab-p1" class="about-text">Soy estudiante de segundo año de ASIR en el Institut Tecnològic de Barcelona, con un fuerte enfoque en ciberseguridad y redes.</p>
-                    <p id="l-ab-p2" class="about-text">Desarrollo experiencia práctica mediante laboratorios virtuales y Linux. Mi objetivo es la ciberseguridad defensiva.</p>
-                    
-                    <div class="skills-tags">
-                        <span><i class="fab fa-linux"></i> Linux/Windows Admin</span>
-                        <span><i class="fab fa-python"></i> Python Scripting</span>
-                        <span><i class="fas fa-network-wired"></i> TCP/IP & DNS</span>
-                        <span><i class="fas fa-shield-alt"></i> Ciberseguridad Defensiva</span>
-                        <span><i class="fas fa-box"></i> VirtualBox</span>
+                    <h2 class="section-title" data-i18n="abT"></h2>
+                    <p class="about-text" data-i18n="abP1"></p>
+                    <p class="about-text" data-i18n="abP2"></p>
+
+                    <div class="tags skills-tags">
+                        <span><i class="fab fa-linux" aria-hidden="true"></i> Linux/Windows Admin</span>
+                        <span><i class="fab fa-python" aria-hidden="true"></i> Python Scripting</span>
+                        <span><i class="fas fa-network-wired" aria-hidden="true"></i> TCP/IP &amp; DNS</span>
+                        <span><i class="fas fa-shield-alt" aria-hidden="true"></i> <span data-i18n="skSec"></span></span>
+                        <span><i class="fas fa-box" aria-hidden="true"></i> VirtualBox</span>
                     </div>
-                    
-                    <div style="margin-top: 25px;">
-                        <a href="jheremysanchezCVe.pdf" download class="btn-primary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px;">
-                            <i class="fas fa-file-pdf"></i> <span id="l-btn-cv">Descargar CV</span>
-                        </a>
-                    </div>
+
+                    <a href="jheremysanchezCVe.pdf" download class="btn-primary cv-btn">
+                        <i class="fas fa-file-pdf" aria-hidden="true"></i> <span data-i18n="btnCV"></span>
+                    </a>
                 </div>
             </section>
 
             <!-- PROYECTOS -->
-            <section id="projects-view" class="view-section">
+            <section id="projects-view" class="view-section" hidden>
                 <div class="grid">
-                    <div class="project-card">
-                        <h3 id="l-p1-title">Calculadora Energética</h3>
-                        <p id="l-p1-desc">Aplicación interactiva para calcular el ahorro eléctrico.</p>
-                        <a href="https://jheremysanchez7e9-web.github.io/TA08_Calculadoraestalvienergetic/" target="_blank" class="btn-link">
-                            <i class="fas fa-external-link-alt"></i> <span id="l-p-open-1">Abrir Proyecto</span>
-                        </a>
-                    </div>
-                    <div class="project-card">
-                        <h3 id="l-p2-title">Projecte Transversal ASIX</h3>
-                        <p id="l-p2-desc">Infraestructura integradora de sistemas, servicios de red y seguridad.</p>
-                        <a href="https://github.com/jheremysanchez7e9-web/ProjecteTransversalASIXc_25-26" target="_blank" class="btn-link">
-                            <i class="fab fa-github"></i> <span id="l-p-open-2">Repositorio</span>
-                        </a>
-                    </div>
-                    <div class="project-card">
-                        <h3 id="l-p3-title">The Cryptic Club</h3>
-                        <p id="l-p3-desc">Proyecto enfocado en ciberseguridad, criptografía y análisis de vulnerabilidades.</p>
-                        <a href="https://github.com/jheremysebastian17/TheCrypticClub" target="_blank" class="btn-link">
-                            <i class="fab fa-github"></i> <span id="l-p-open-3">Repositorio</span>
-                        </a>
-                    </div>
-                    <div class="project-card">
-                        <h3 id="l-p4-title">The Daily Exploit</h3>
-                        <p id="l-p4-desc">Plataforma de análisis de vulnerabilidades, exploits y noticias de ciberseguridad.</p>
-                        <a href="https://github.com/jheremysanchez7e9-web/the-daily-exploit" target="_blank" class="btn-link">
-                            <i class="fab fa-github"></i> <span id="l-p-open-4">Repositorio</span>
-                        </a>
-                    </div>
+                    <article class="project-card">
+                        <h3>The Daily Exploit</h3>
+                        <p data-i18n="p4D"></p>
+                        <div class="tags"><span>Python</span><span>JavaScript</span><span>CVE</span></div>
+                        <div class="card-links">
+                            <a href="https://jheremysebastian17.github.io/the-daily-exploit/" target="_blank" rel="noopener" class="btn-link">
+                                <i class="fas fa-external-link-alt" aria-hidden="true"></i> <span data-i18n="pDemo"></span>
+                            </a>
+                            <a href="https://github.com/jheremysebastian17/the-daily-exploit" target="_blank" rel="noopener" class="btn-link alt">
+                                <i class="fab fa-github" aria-hidden="true"></i> <span data-i18n="pRepo"></span>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <h3 data-i18n="p2T"></h3>
+                        <p data-i18n="p2D"></p>
+                        <div class="tags"><span>Datacenter</span><span>VLANs</span><span>Firewall</span></div>
+                        <div class="card-links">
+                            <a href="https://jheremysanchez7e9-web.github.io/ProjecteTransversalASIXc_25-26/" target="_blank" rel="noopener" class="btn-link">
+                                <i class="fas fa-external-link-alt" aria-hidden="true"></i> <span data-i18n="pDemo"></span>
+                            </a>
+                            <a href="https://github.com/jheremysanchez7e9-web/ProjecteTransversalASIXc_25-26" target="_blank" rel="noopener" class="btn-link alt">
+                                <i class="fab fa-github" aria-hidden="true"></i> <span data-i18n="pRepo"></span>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <h3>The Cryptic Club</h3>
+                        <p data-i18n="p3D"></p>
+                        <div class="tags"><span>JavaScript</span><span>HTML</span><span>CSS</span></div>
+                        <div class="card-links">
+                            <a href="https://jheremysebastian17.github.io/TheCrypticClub/" target="_blank" rel="noopener" class="btn-link">
+                                <i class="fas fa-external-link-alt" aria-hidden="true"></i> <span data-i18n="pDemo"></span>
+                            </a>
+                            <a href="https://github.com/jheremysebastian17/TheCrypticClub" target="_blank" rel="noopener" class="btn-link alt">
+                                <i class="fab fa-github" aria-hidden="true"></i> <span data-i18n="pRepo"></span>
+                            </a>
+                        </div>
+                    </article>
+                    <article class="project-card">
+                        <h3 data-i18n="p1T"></h3>
+                        <p data-i18n="p1D"></p>
+                        <div class="tags"><span>JavaScript</span><span>HTML</span><span>CSS</span></div>
+                        <div class="card-links">
+                            <a href="https://jheremysanchez7e9-web.github.io/TA08_Calculadoraestalvienergetic/" target="_blank" rel="noopener" class="btn-link">
+                                <i class="fas fa-external-link-alt" aria-hidden="true"></i> <span data-i18n="pDemo"></span>
+                            </a>
+                            <a href="https://github.com/jheremysanchez7e9-web/TA08_Calculadoraestalvienergetic" target="_blank" rel="noopener" class="btn-link alt">
+                                <i class="fab fa-github" aria-hidden="true"></i> <span data-i18n="pRepo"></span>
+                            </a>
+                        </div>
+                    </article>
                 </div>
             </section>
 
             <!-- CONTACTO -->
-            <section id="contact-view" class="view-section">
+            <section id="contact-view" class="view-section" hidden>
                 <div class="contact-layout">
                     <div class="contact-info">
-                        <h2 id="l-c-title" style="margin-bottom: 15px;">Contacto Directo</h2>
-                        <a href="https://www.linkedin.com/in/jheremysanchez/" target="_blank" class="info-card">
-                            <i class="fab fa-linkedin"></i>
+                        <h2 class="section-title" data-i18n="cT"></h2>
+                        <a href="https://www.linkedin.com/in/jheremysanchez/" target="_blank" rel="noopener" class="info-card">
+                            <i class="fab fa-linkedin" aria-hidden="true"></i>
                             <div><strong>LinkedIn</strong><br><small>jheremysanchez</small></div>
                         </a>
+                        <a href="https://github.com/jheremysebastian17" target="_blank" rel="noopener" class="info-card">
+                            <i class="fab fa-github" aria-hidden="true"></i>
+                            <div><strong>GitHub</strong><br><small>jheremysebastian17</small></div>
+                        </a>
                         <a href="mailto:jheremysebastian17@gmail.com" class="info-card">
-                            <i class="fas fa-envelope"></i>
+                            <i class="fas fa-envelope" aria-hidden="true"></i>
                             <div><strong>Email</strong><br><small>jheremysebastian17@gmail.com</small></div>
                         </a>
-                        <form id="contact-form">
-                            <input type="text" id="f-name" placeholder="Nombre completo" required>
-                            <textarea id="f-msg" rows="4" placeholder="¿En qué puedo ayudarte?" required></textarea>
-                            <button type="submit" class="btn-primary" style="width: 100%;" id="l-btn-send">Enviar vía Email</button>
-                        </form>
+                        <div class="info-card">
+                            <i class="fas fa-location-dot" aria-hidden="true"></i>
+                            <div><strong data-i18n="cLoc"></strong></div>
+                        </div>
                     </div>
-                    <div class="map-box">
-                        <iframe 
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2991.46453715842!2d2.1856333765851494!3d41.451381992019945!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a4bcba617e997b%3A0x6b47c617b0754dfb!2sCarrer%20d&#39;Aiguablava%2C%20121%2C%2008033%20Barcelona!5e0!3m2!1ses!2ses!4v1714570000000!5m2!1ses!2ses" 
-                            width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
-                        </iframe>
-                    </div>
+                    <form id="contact-form" class="contact-form">
+                        <h2 class="section-title" data-i18n="fT"></h2>
+                        <input type="text" id="f-name" data-i18n-ph="fName" autocomplete="name" required>
+                        <textarea id="f-msg" rows="6" data-i18n-ph="fMsg" required></textarea>
+                        <button type="submit" class="btn-primary" data-i18n="btnS"></button>
+                    </form>
                 </div>
             </section>
         </main>
 
         <footer class="footer">
             <nav>
-                <button class="nav-link active" onclick="showView('home')" id="n-h">INICIO</button>
-                <button class="nav-link" onclick="showView('about')" id="n-a">SOBRE MÍ</button>
-                <button class="nav-link" onclick="showView('projects')" id="n-p">PROYECTOS</button>
-                <button class="nav-link" onclick="showView('contact')" id="n-c">CONTACTO</button>
+                <a class="nav-link" href="#home" data-i18n="nH"></a>
+                <a class="nav-link" href="#about" data-i18n="nA"></a>
+                <a class="nav-link" href="#projects" data-i18n="nP"></a>
+                <a class="nav-link" href="#contact" data-i18n="nC"></a>
             </nav>
         </footer>
     </div>
