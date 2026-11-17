@@ -22,5 +22,22 @@
   "jheremysanchez7e9-web/TA08_Calculadoraestalvienergetic": {
     "stars": 0,
     "pushed": "2026-04-27T10:04:40Z"
+  },
+  "jheremysebastian17/fileshot": {
+    "stars": 0,
+    "pushed": "2026-11-17T14:52:11Z",
+    "card": {
+      "title": "Fileshot",
+      "description": "File tools where uploading is a sport: compress, merge and convert files in your browser, but first score a basket, a goal or a home run.",
+      "demo": "https://jheremysebastian17.github.io/fileshot/",
+      "repo": "https://github.com/jheremysebastian17/fileshot",
+      "image": "img/projects/fileshot.jpg",
+      "cat": "game web",
+      "tags": [
+        "JavaScript",
+        "Game",
+        "Image Compression"
+      ]
+    }
   }
 }
