@@ -31,6 +31,7 @@ Built from scratch with no frameworks, build tools, or npm dependencies.
 
 | Project | Description | Links |
 |---|---|---|
+| **NetSec Toolkit** | Seven client-side networking and defensive security tools: subnetting, firewall rules, security headers, passwords, hardening, log analysis and uptime monitoring. | [Demo](https://jheremysebastian17.github.io/netsec-toolkit/) · [Repo](https://github.com/jheremysebastian17/netsec-toolkit) |
 | **The Daily Exploit** | Real-time threat intelligence platform: CVE tracking and cybersecurity news. | [Demo](https://jheremysebastian17.github.io/the-daily-exploit/) · [Repo](https://github.com/jheremysebastian17/the-daily-exploit) |
 | **Projecte Transversal ASIX** | Team design of a sustainable data center: IT infrastructure, VLANs, firewall, UPS systems, and physical and logical security. | [Demo](https://jheremysanchez7e9-web.github.io/ProjecteTransversalASIXc_25-26/) · [Repo](https://github.com/jheremysanchez7e9-web/ProjecteTransversalASIXc_25-26) |
 | **The Cryptic Club** | Minimalist SPA for daily cryptic puzzles with streaks, achievements, and a time-attack mode. | [Demo](https://jheremysebastian17.github.io/TheCrypticClub/) · [Repo](https://github.com/jheremysebastian17/TheCrypticClub) |
