@@ -31,6 +31,7 @@ Built from scratch with no frameworks, build tools, or npm dependencies.
 
 | Project | Description | Links |
 |---|---|---|
+| **PawnScope** | Chess.com game review in the browser with Stockfish 18: move classifications, an analyst that explains every move, board arrows and accuracy stats. | [Demo](https://jheremysebastian17.github.io/pawnscope/) · [Repo](https://github.com/jheremysebastian17/pawnscope) |
 | **NetSec Toolkit** | Seven client-side networking and defensive security tools: subnetting, firewall rules, security headers, passwords, hardening, log analysis and uptime monitoring. | [Demo](https://jheremysebastian17.github.io/netsec-toolkit/) · [Repo](https://github.com/jheremysebastian17/netsec-toolkit) |
 | **The Daily Exploit** | Real-time threat intelligence platform: CVE tracking and cybersecurity news. | [Demo](https://jheremysebastian17.github.io/the-daily-exploit/) · [Repo](https://github.com/jheremysebastian17/the-daily-exploit) |
 | **Projecte Transversal ASIX** | Team design of a sustainable data center: IT infrastructure, VLANs, firewall, UPS systems, and physical and logical security. | [Demo](https://jheremysanchez7e9-web.github.io/ProjecteTransversalASIXc_25-26/) · [Repo](https://github.com/jheremysanchez7e9-web/ProjecteTransversalASIXc_25-26) |
