@@ -68,7 +68,7 @@ body {
 .icon-btn { background: none; border: none; color: var(--accent); font-size: 1.2rem; cursor: pointer; padding: 6px; }
 .lang-control { display: flex; align-items: center; gap: 8px; color: var(--accent); }
 
-.main-content { overflow-y: auto; padding: 30px 0; scrollbar-width: thin; }
+.main-content { overflow-y: auto; overflow-x: hidden; padding: 30px 8px; scrollbar-width: thin; } /* x hidden: the hovered card scales 2% and must not add a sideways scrollbar */
 .view-section { display: flex; flex-direction: column; animation: fadeIn 0.4s ease; }
 .view-section[hidden] { display: none; }
 @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
@@ -187,3 +187,68 @@ input, textarea {
     }
     .project-card.is-tilting::before { opacity: 1; }
 }
+
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+/* ---------- Project cards: preview, live stats, filters ---------- */
+.project-card[hidden] { display: none; }
+.card-shot { display: block; border-radius: 8px; overflow: hidden; border: 1px solid var(--border); aspect-ratio: 16 / 9; background: var(--container-bg); }
+.card-shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .5s; }
+.project-card.is-tilting .card-shot img { transform: scale(1.04); }
+.repo-meta { display: flex; gap: 14px; font-size: .8rem; opacity: .75; }
+.repo-meta[hidden] { display: none; }
+.repo-meta i { color: var(--accent); }
+.filters { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 20px; }
+.chip { background: var(--container-bg); color: var(--text); border: 1px solid var(--border); padding: 7px 14px; border-radius: 999px; font: inherit; font-size: .85rem; font-weight: 600; cursor: pointer; }
+.chip:hover { border-color: var(--accent); color: var(--accent); }
+.chip.active { background: var(--accent); border-color: var(--accent); color: var(--btn-text); }
+
+/* ---------- Contact fallback ---------- */
+.form-note { margin-top: 14px; font-size: .9rem; line-height: 1.5; display: flex; flex-wrap: wrap; align-items: center; gap: 10px; }
+.form-note[hidden] { display: none; }
+
+/* ---------- Ctrl+K palette and terminal (native <dialog>) ---------- */
+.kbd-hint { font: 600 .65rem/1 ui-monospace, monospace; border: 1px solid var(--border); border-radius: 4px; padding: 3px 5px; margin-left: 6px; color: var(--text); opacity: .7; vertical-align: middle; }
+@media (max-width: 700px), (any-hover: none) { .kbd-hint { display: none; } }
+dialog.overlay { margin: 12vh auto auto; width: min(560px, calc(100% - 32px)); padding: 0; border: 1px solid var(--border); border-radius: 12px; background: var(--container-bg); color: var(--text); box-shadow: 0 30px 60px -20px rgba(0, 0, 0, .6); overflow: hidden; }
+dialog.overlay::backdrop { background: rgba(2, 6, 23, .55); backdrop-filter: blur(3px); }
+dialog.overlay[open] { animation: popIn .18s ease-out; }
+@keyframes popIn { from { opacity: 0; transform: translateY(-8px) scale(.98); } }
+#palette-input { margin: 0; border: 0; border-bottom: 1px solid var(--border); border-radius: 0; padding: 16px 18px; font-size: 1.05rem; background: transparent; }
+#palette-input:focus-visible { outline: none; }
+#palette-list { list-style: none; max-height: min(50vh, 360px); overflow-y: auto; padding: 6px; }
+#palette-list li { padding: 10px 12px; border-radius: 8px; cursor: pointer; display: flex; align-items: center; gap: 10px; }
+#palette-list li i { width: 1.2rem; text-align: center; color: var(--accent); }
+#palette-list li.sel { background: color-mix(in srgb, var(--accent) 16%, transparent); }
+#palette-list li.empty { cursor: default; opacity: .6; }
+.palette-foot { border-top: 1px solid var(--border); padding: 8px 14px; font-size: .75rem; opacity: .65; }
+.palette-foot kbd, .kbd-hint { font-family: ui-monospace, monospace; }
+.palette-foot kbd { border: 1px solid var(--border); border-radius: 4px; padding: 1px 5px; margin-right: 2px; }
+
+#terminal { width: min(720px, calc(100% - 32px)); background: #0b1020; color: #cbd5e1; border-color: #1e293b; font-family: ui-monospace, 'Cascadia Code', Consolas, monospace; }
+.term-bar { display: flex; align-items: center; gap: 7px; padding: 10px 14px; background: #111827; border-bottom: 1px solid #1e293b; font-size: .8rem; }
+.term-bar span { width: 11px; height: 11px; border-radius: 50%; background: #ef4444; }
+.term-bar span:nth-child(2) { background: #f59e0b; }
+.term-bar span:nth-child(3) { background: #22c55e; }
+.term-bar b { margin-left: 8px; font-weight: 500; opacity: .7; }
+.term-out { height: min(50vh, 340px); overflow-y: auto; scrollbar-color: #334155 transparent; padding: 14px 16px 0; font-size: .88rem; }
+.term-out pre { white-space: pre-wrap; overflow-wrap: anywhere; margin-bottom: 8px; font: inherit; line-height: 1.5; }
+.term-out .cmd { color: #4ade80; margin-bottom: 2px; }
+.term-out .err { color: #f87171; }
+.term-out .muted { color: #94a3b8; }
+.term-line { display: flex; align-items: center; gap: 8px; padding: 6px 16px 14px; font-size: .88rem; }
+.term-line label { color: #4ade80; white-space: nowrap; }
+.term-line input { margin: 0; padding: 4px 0; border: 0; background: transparent; color: #f8fafc; font: inherit; caret-color: #4ade80; }
+.term-line input:focus-visible { outline: none; }
+
+/* ---------- About: animated timeline ---------- */
+.timeline { position: relative; }
+.timeline::before { content: ''; position: absolute; left: calc(.75rem - 1px); top: 8px; bottom: 8px; width: 2px; background: linear-gradient(var(--accent), transparent); opacity: .5; transform-origin: top; }
+.timeline li { position: relative; }
+.timeline i { background: var(--card); border-radius: 50%; }
+#about-view:not([hidden]) .timeline::before { animation: growLine .8s ease-out both; }
+#about-view:not([hidden]) .timeline li { animation: slideIn .5s ease-out both; }
+#about-view:not([hidden]) .timeline li:nth-child(2) { animation-delay: .15s; }
+#about-view:not([hidden]) .timeline li:nth-child(3) { animation-delay: .3s; }
+@keyframes growLine { from { transform: scaleY(0); } }
+@keyframes slideIn { from { opacity: 0; transform: translateX(-14px); } }

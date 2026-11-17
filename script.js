@@ -25,6 +25,7 @@ const dict = {
         cT: "Contacto Directo", cLoc: "Barcelona, España",
         fT: "Envíame un mensaje", fName: "Nombre completo", fMsg: "¿En qué puedo ayudarte?", btnS: "Enviar vía Email",
         nH: "INICIO", nA: "SOBRE MÍ", nP: "PROYECTOS", nC: "CONTACTO",
+        fiLabel: "Filtrar proyectos", fiAll: "Todos", fiSec: "Ciberseguridad", fiSys: "Sistemas y redes", fiWeb: "Web", fiGame: "Juegos", rUpd: "Actualizado {d}", rStars: "{n} estrellas en GitHub", aPalette: "Buscar o ir a… (Ctrl+K)", paPh: "Busca una sección, proyecto o acción…", paNone: "Sin resultados", paTheme: "Cambiar tema claro/oscuro", paLang: "Idioma: {l}", paTerm: "Abrir terminal", fNote: "Si no se ha abierto tu programa de correo, escríbeme directamente:", fCopy: "Copiar email", fCopied: "¡Copiado!",
         aTheme: "Cambiar tema", aLang: "Idioma"
     },
     en: {
@@ -53,6 +54,7 @@ const dict = {
         cT: "Direct Contact", cLoc: "Barcelona, Spain",
         fT: "Send me a message", fName: "Full Name", fMsg: "How can I help you?", btnS: "Send via Email",
         nH: "HOME", nA: "ABOUT ME", nP: "PROJECTS", nC: "CONTACT",
+        fiLabel: "Filter projects", fiAll: "All", fiSec: "Cybersecurity", fiSys: "Systems & networks", fiWeb: "Web", fiGame: "Games", rUpd: "Updated {d}", rStars: "{n} stars on GitHub", aPalette: "Search or jump to… (Ctrl+K)", paPh: "Search a section, project or action…", paNone: "No results", paTheme: "Toggle light/dark theme", paLang: "Language: {l}", paTerm: "Open terminal", fNote: "If your email app did not open, write to me directly:", fCopy: "Copy email", fCopied: "Copied!",
         aTheme: "Toggle theme", aLang: "Language"
     },
     ca: {
@@ -81,6 +83,7 @@ const dict = {
         cT: "Contacte Directe", cLoc: "Barcelona, Espanya",
         fT: "Envia'm un missatge", fName: "Nom complet", fMsg: "En què et puc ajudar?", btnS: "Enviar via Email",
         nH: "INICI", nA: "SOBRE MI", nP: "PROJECTES", nC: "CONTACTE",
+        fiLabel: "Filtrar projectes", fiAll: "Tots", fiSec: "Ciberseguretat", fiSys: "Sistemes i xarxes", fiWeb: "Web", fiGame: "Jocs", rUpd: "Actualitzat {d}", rStars: "{n} estrelles a GitHub", aPalette: "Cerca o ves a… (Ctrl+K)", paPh: "Cerca una secció, projecte o acció…", paNone: "Sense resultats", paTheme: "Canviar tema clar/fosc", paLang: "Idioma: {l}", paTerm: "Obrir terminal", fNote: "Si no s’ha obert el teu programa de correu, escriu-me directament:", fCopy: "Copiar email", fCopied: "Copiat!",
         aTheme: "Canviar tema", aLang: "Idioma"
     },
     fr: {
@@ -109,6 +112,7 @@ const dict = {
         cT: "Contact Direct", cLoc: "Barcelone, Espagne",
         fT: "Envoyez-moi un message", fName: "Nom complet", fMsg: "Comment puis-je vous aider ?", btnS: "Envoyer par e-mail",
         nH: "ACCUEIL", nA: "À PROPOS", nP: "PROJETS", nC: "CONTACT",
+        fiLabel: "Filtrer les projets", fiAll: "Tous", fiSec: "Cybersécurité", fiSys: "Systèmes et réseaux", fiWeb: "Web", fiGame: "Jeux", rUpd: "Mis à jour {d}", rStars: "{n} étoiles sur GitHub", aPalette: "Rechercher ou aller à… (Ctrl+K)", paPh: "Cherchez une section, un projet ou une action…", paNone: "Aucun résultat", paTheme: "Changer de thème clair/sombre", paLang: "Langue : {l}", paTerm: "Ouvrir le terminal", fNote: "Si votre messagerie ne s’est pas ouverte, écrivez-moi directement :", fCopy: "Copier l’e-mail", fCopied: "Copié !",
         aTheme: "Changer de thème", aLang: "Langue"
     },
     de: {
@@ -137,12 +141,19 @@ const dict = {
         cT: "Direkter Kontakt", cLoc: "Barcelona, Spanien",
         fT: "Schreib mir eine Nachricht", fName: "Vollständiger Name", fMsg: "Wie kann ich helfen?", btnS: "Per E-Mail senden",
         nH: "START", nA: "ÜBER MICH", nP: "PROJEKTE", nC: "KONTAKT",
+        fiLabel: "Projekte filtern", fiAll: "Alle", fiSec: "Cybersicherheit", fiSys: "Systeme & Netzwerke", fiWeb: "Web", fiGame: "Spiele", rUpd: "Aktualisiert {d}", rStars: "{n} Sterne auf GitHub", aPalette: "Suchen oder springen… (Strg+K)", paPh: "Abschnitt, Projekt oder Aktion suchen…", paNone: "Keine Ergebnisse", paTheme: "Helles/dunkles Design", paLang: "Sprache: {l}", paTerm: "Terminal öffnen", fNote: "Falls sich dein E-Mail-Programm nicht geöffnet hat, schreib mir direkt:", fCopy: "E-Mail kopieren", fCopied: "Kopiert!",
         aTheme: "Design wechseln", aLang: "Sprache"
     }
 };
 
 const root = document.documentElement;
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+const EMAIL = 'jheremysebastian17@gmail.com';
+// localStorage throws in some private modes / blocked-storage setups; the site must still work.
+const store = {
+    get: (k) => { try { return localStorage.getItem(k); } catch { return null; } },
+    set: (k, v) => { try { localStorage.setItem(k, v); } catch { /* not persisted */ } },
+};
 
 /* ---------- i18n ---------- */
 const langSelect = document.getElementById('lang-select');
@@ -151,7 +162,7 @@ function changeLang() {
     const l = langSelect.value;
     const d = dict[l];
     root.lang = l;
-    localStorage.setItem('portfolio-lang', l);
+    store.set('portfolio-lang', l);
 
     document.querySelectorAll('[data-i18n]').forEach(el => { el.textContent = d[el.dataset.i18n]; });
     document.querySelectorAll('[data-i18n-aria]').forEach(el => { el.setAttribute('aria-label', d[el.dataset.i18nAria]); });
@@ -161,6 +172,7 @@ function changeLang() {
     });
 
     renderCerts();
+    renderRepos();
     startTypewriter(d.roles);
 }
 langSelect.addEventListener('change', changeLang);
@@ -168,6 +180,7 @@ langSelect.addEventListener('change', changeLang);
 /* ---------- Certifications (certs.json is generated from Credly by a GitHub Action) ---------- */
 let certs = null; // null = still loading, false = failed
 const t = (key) => dict[langSelect.value][key];
+const fmt = (key, params) => t(key).replace(/\{(\w+)\}/g, (_, k) => params[k]);
 
 function el(tag, props = {}, ...children) {
     const node = Object.assign(document.createElement(tag), props);
@@ -312,26 +325,208 @@ document.getElementById('contact-form').addEventListener('submit', function (e) 
     e.preventDefault();
     const name = document.getElementById('f-name').value;
     const msg = document.getElementById('f-msg').value;
-    const email = "jheremysebastian17@gmail.com";
     // Encoded so characters like & or # in the message do not truncate the mailto URL.
     const subject = encodeURIComponent(`Portfolio Contact - ${name}`);
     const body = encodeURIComponent(`${msg}\n\n${name}`);
-    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:${EMAIL}?subject=${subject}&body=${body}`;
+    // mailto gives no success/failure signal, so always offer the address as a fallback.
+    setTimeout(() => { document.getElementById('form-note').hidden = false; }, 800);
+});
+
+const copyBtn = document.getElementById('copy-email');
+copyBtn.addEventListener('click', async () => {
+    const label = copyBtn.querySelector('span');
+    try { await navigator.clipboard.writeText(EMAIL); label.textContent = t('fCopied'); }
+    catch { label.textContent = EMAIL; } // clipboard blocked: show the address so it can be copied by hand
+    setTimeout(() => { label.textContent = t('fCopy'); }, 2500);
 });
 
 /* ---------- Theme ---------- */
 const themeToggle = document.getElementById('theme-toggle');
 function setTheme(theme) {
     root.setAttribute('data-theme', theme);
-    localStorage.setItem('portfolio-theme', theme);
+    store.set('portfolio-theme', theme);
     themeToggle.querySelector('i').className = theme === 'light' ? 'fas fa-moon' : 'fas fa-sun';
     accent = getComputedStyle(root).getPropertyValue('--accent');
 }
 themeToggle.addEventListener('click', () => setTheme(root.getAttribute('data-theme') === 'light' ? 'dark' : 'light'));
 
+/* ---------- Projects: category filters ---------- */
+document.querySelector('.filters').addEventListener('click', (e) => {
+    const btn = e.target.closest('[data-filter]');
+    if (!btn) return;
+    const f = btn.dataset.filter;
+    document.querySelectorAll('.filters .chip').forEach((c) => {
+        c.classList.toggle('active', c === btn);
+        c.setAttribute('aria-pressed', String(c === btn));
+    });
+    document.querySelectorAll('#projects-view [data-cat]').forEach((card) => {
+        card.hidden = f !== 'all' && !card.dataset.cat.split(' ').includes(f);
+    });
+});
+
+/* ---------- Projects: stars and last update (repos.json is refreshed daily by a GitHub Action) ---------- */
+let repos = null;
+function renderRepos() {
+    if (!repos) return;
+    const rtf = new Intl.RelativeTimeFormat(langSelect.value, { numeric: 'auto' });
+    const ago = (iso) => {
+        const days = Math.round((Date.parse(iso) - Date.now()) / 864e5);
+        if (Math.abs(days) < 30) return rtf.format(days, 'day');
+        if (Math.abs(days) < 365) return rtf.format(Math.round(days / 30), 'month');
+        return rtf.format(Math.round(days / 365), 'year');
+    };
+    document.querySelectorAll('[data-repo]').forEach((card) => {
+        const r = repos[card.dataset.repo];
+        const box = card.querySelector('.repo-meta');
+        if (!r || !box) return;
+        box.replaceChildren(
+            el('span', { title: fmt('rStars', { n: r.stars }) }, icon('fas fa-star'), ' ',
+                el('span', { ariaHidden: 'true' }, String(r.stars)), el('span', { className: 'sr-only' }, fmt('rStars', { n: r.stars }))),
+            el('span', {}, icon('fas fa-code-commit'), ' ', fmt('rUpd', { d: ago(r.pushed) })));
+        box.hidden = false;
+    });
+}
+fetch('repos.json')
+    .then((res) => (res.ok ? res.json() : null))
+    .then((data) => { repos = data; renderRepos(); })
+    .catch(() => {}); // stats are optional; the cards work without them
+
+/* ---------- Ctrl+K command palette ---------- */
+const palette = document.getElementById('palette');
+const pInput = document.getElementById('palette-input');
+const pList = document.getElementById('palette-list');
+let pItems = [];
+let pSel = 0;
+const norm = (s) => s.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase();
+
+function paletteItems() {
+    const navKey = { home: 'nH', about: 'nA', projects: 'nP', certs: 'nCe', contact: 'nC' };
+    return [
+        ...views.map((v) => ({ icon: 'fas fa-arrow-right', label: t(navKey[v]), run: () => { location.hash = v; } })),
+        ...[...document.querySelectorAll('#projects-view [data-repo]')].map((c) => ({
+            icon: 'fas fa-folder-open', label: c.querySelector('h3').textContent,
+            run: () => window.open(c.querySelector('.card-links .btn-link').href, '_blank', 'noopener'),
+        })),
+        { icon: 'fas fa-circle-half-stroke', label: t('paTheme'), run: () => themeToggle.click() },
+        ...Object.keys(dict).filter((l) => l !== langSelect.value).map((l) => ({
+            icon: 'fas fa-globe', label: fmt('paLang', { l: `${new Intl.DisplayNames([l], { type: 'language' }).of(l)} (${l.toUpperCase()})` }), run: () => { langSelect.value = l; changeLang(); },
+        })),
+        { icon: 'fas fa-file-pdf', label: t('btnCV'), run: () => document.querySelector('a.cv-btn[download]').click() },
+        { icon: 'fas fa-terminal', label: t('paTerm'), run: openTerminal },
+    ];
+}
+
+function renderPalette() {
+    const q = norm(pInput.value.trim());
+    pItems = paletteItems().filter((it) => norm(it.label).includes(q));
+    pSel = Math.min(pSel, Math.max(0, pItems.length - 1));
+    pList.replaceChildren(...(pItems.length
+        ? pItems.map((it, i) => el('li', {
+            id: `pi-${i}`, role: 'option', ariaSelected: String(i === pSel), className: i === pSel ? 'sel' : '',
+            onclick: () => runPalette(i), onmousemove: () => { if (pSel !== i) { pSel = i; renderPalette(); } },
+        }, icon(it.icon), ' ', it.label))
+        : [el('li', { className: 'empty' }, t('paNone'))]));
+    pInput.setAttribute('aria-activedescendant', pItems.length ? `pi-${pSel}` : '');
+    pList.querySelector('.sel')?.scrollIntoView({ block: 'nearest' });
+}
+function runPalette(i) {
+    const it = pItems[i];
+    if (!it) return;
+    palette.close();
+    it.run();
+}
+function openPalette() {
+    if (palette.open) return;
+    pInput.value = '';
+    pSel = 0;
+    renderPalette();
+    palette.showModal();
+}
+pInput.addEventListener('input', () => { pSel = 0; renderPalette(); });
+pInput.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        if (pItems.length) pSel = (pSel + (e.key === 'ArrowDown' ? 1 : -1) + pItems.length) % pItems.length;
+        renderPalette();
+    } else if (e.key === 'Enter') { e.preventDefault(); runPalette(pSel); }
+});
+document.getElementById('palette-btn').addEventListener('click', openPalette);
+
+// Clicking the dimmed backdrop (the dialog element itself, outside its content) closes either overlay.
+document.querySelectorAll('dialog.overlay').forEach((d) => d.addEventListener('click', (e) => { if (e.target === d) d.close(); }));
+
+/* ---------- Easter egg terminal ---------- */
+const term = document.getElementById('terminal');
+const tOut = document.getElementById('term-out');
+const tIn = document.getElementById('term-input');
+const tHistory = [];
+let tPos = 0;
+const print = (text, cls = '') => { tOut.append(el('pre', { className: cls }, text)); tOut.scrollTop = tOut.scrollHeight; };
+const projectCards = () => [...document.querySelectorAll('#projects-view [data-repo]')];
+
+const commands = {
+    help: () => 'Available commands:\n  whoami      who is Jheremy\n  skills      technical skills\n  projects    list projects\n  open <n>    open project number n\n  certs       certifications\n  contact     how to reach me\n  cv          download my CV\n  goto <view> home | about | projects | certs | contact\n  theme       toggle light/dark\n  lang <xx>   es | en | ca | fr | de\n  date, echo, clear, exit',
+    whoami: () => 'Jheremy Sánchez\nASIR student (2nd year) · Systems, networks & defensive cybersecurity\nInstitut Tecnològic de Barcelona · Barcelona, Spain',
+    skills: () => [...document.querySelectorAll('.skills-tags > span')].map((s) => '  • ' + s.textContent.trim()).join('\n'),
+    projects: () => projectCards().map((c, i) => `  [${i + 1}] ${c.querySelector('h3').textContent}`).join('\n') + '\nType "open <n>" to launch one.',
+    open: (arg) => {
+        const cards = projectCards();
+        const c = cards[Number(arg) - 1] || cards.find((x) => arg && norm(x.querySelector('h3').textContent).includes(norm(arg)));
+        if (!c) return 'usage: open <number|name>  (see "projects")';
+        window.open(c.querySelector('.card-links .btn-link').href, '_blank', 'noopener');
+        return `Opening ${c.querySelector('h3').textContent}…`;
+    },
+    certs: () => (certs ? certs.map((c) => `  ✔ ${c.title} — ${c.issuer}`).join('\n') : 'Certifications are still loading or unavailable.'),
+    contact: () => `  Email:    ${EMAIL}\n  LinkedIn: linkedin.com/in/jheremysanchez\n  GitHub:   github.com/jheremysebastian17`,
+    cv: () => { document.querySelector('a.cv-btn[download]').click(); return 'Downloading CV…'; },
+    goto: (arg) => (views.includes(arg) ? (location.hash = arg, `→ ${arg}`) : 'usage: goto home|about|projects|certs|contact'),
+    theme: () => { themeToggle.click(); return `Theme: ${root.dataset.theme}`; },
+    lang: (arg) => (dict[arg] ? (langSelect.value = arg, changeLang(), `Language: ${arg}`) : 'usage: lang es|en|ca|fr|de'),
+    date: () => new Date().toString(),
+    echo: (...a) => a.join(' '),
+    ls: () => 'about/  projects/  certs/  contact/  cv.pdf',
+    sudo: () => 'guest is not in the sudoers file. This incident will be reported. 🙂',
+    clear: () => { tOut.replaceChildren(); return null; },
+    exit: () => { term.close(); return null; },
+};
+
+function openTerminal() {
+    if (term.open) return;
+    if (!tOut.childElementCount) print('Welcome to jheremy-os 1.0 — type "help" to start.', 'muted');
+    term.showModal();
+    tIn.focus();
+}
+document.getElementById('term-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const line = tIn.value.trim();
+    tIn.value = '';
+    print(`guest@jheremy:~$ ${line}`, 'cmd');
+    if (!line) return;
+    tHistory.push(line);
+    tPos = tHistory.length;
+    const [name, ...args] = line.split(/\s+/);
+    const fn = commands[name.toLowerCase()];
+    const res = fn ? fn(...args) : `${name}: command not found. Try "help".`;
+    if (res) print(res, fn ? '' : 'err');
+});
+tIn.addEventListener('keydown', (e) => {
+    if (e.key !== 'ArrowUp' && e.key !== 'ArrowDown') return;
+    e.preventDefault();
+    tPos = Math.max(0, Math.min(tHistory.length, tPos + (e.key === 'ArrowUp' ? -1 : 1)));
+    tIn.value = tHistory[tPos] ?? '';
+});
+
+// Global shortcuts: Ctrl/Cmd+K opens the palette; the ` key opens the terminal when not typing.
+document.addEventListener('keydown', (e) => {
+    if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === 'k') { e.preventDefault(); openPalette(); return; }
+    const typing = e.target.closest('input, textarea, select, [contenteditable]');
+    if (e.key === '`' && !typing && !palette.open) { e.preventDefault(); openTerminal(); }
+});
+
 /* ---------- Init ---------- */
-setTheme(localStorage.getItem('portfolio-theme') || 'dark');
-const savedLang = localStorage.getItem('portfolio-lang') || navigator.language.slice(0, 2);
+setTheme(store.get('portfolio-theme') || 'dark');
+const savedLang = store.get('portfolio-lang') || navigator.language.slice(0, 2);
 langSelect.value = dict[savedLang] ? savedLang : 'en';
 changeLang();
 showView();

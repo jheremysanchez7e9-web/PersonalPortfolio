@@ -1,6 +1,6 @@
-name: Update certifications
+name: Update certifications and repos
 
-# Syncs certs.json with the public Credly profile once a day,
+# Syncs certs.json (Credly) and repos.json (GitHub stars/updates) once a day,
 # and on demand from the Actions tab ("Run workflow").
 on:
   schedule:
@@ -24,14 +24,17 @@ jobs:
         with:
           node-version: '22'
       - run: node scripts/update-certs.mjs
-      - name: Commit certs.json if it changed
+      - run: node scripts/update-repos.mjs
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+      - name: Commit data files if they changed
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add certs.json
+          git add certs.json repos.json
           if git diff --staged --quiet; then
-            echo "No changes in certs.json"
+            echo "No changes"
           else
-            git commit -m "chore: update certifications from Credly"
+            git commit -m "chore: update certifications and repo stats"
             git push
           fi
