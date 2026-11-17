@@ -22,7 +22,7 @@ Built from scratch with no frameworks, build tools, or npm dependencies.
 - **Accessibility:** real links for navigation, labelled controls, visible keyboard focus, and animations disabled under `prefers-reduced-motion`.
 - **Contact form without a backend:** builds a correctly encoded `mailto:` link, then offers a copy-email button in case no mail app opened.
 - **Project cards with previews:** screenshots in `img/projects/`, category filters (security, systems, web, games), and live GitHub stars / last update from `repos.json`.
-- **Repo stats synced daily:** the same workflow runs `scripts/update-repos.mjs`, which reads the `data-repo="owner/name"` attributes in `index.html` and writes `repos.json`. Adding a card with `data-repo` is enough.
+- **New projects are added automatically:** the daily workflow runs `scripts/update-repos.mjs`, which finds every public, non-fork repo with **GitHub Pages enabled** in both GitHub accounts and adds it as a card (title, description, language/topics, category, stars, demo and repo links). New projects also get a screenshot taken by `scripts/screenshot.mjs` (Playwright). To keep a repo off the portfolio, add the topic `no-portfolio`. Hand-written cards in `index.html` (with `data-repo="owner/name"`) take precedence and keep their translated texts.
 - **Command palette (Ctrl+K):** jump to any section or project, switch theme or language, download the CV.
 - **Terminal easter egg:** press the <kbd>`</kbd> key (or pick it in the palette) and type `help`.
 - **Link previews:** Open Graph / Twitter card with `img/og.png` (1200×630).
@@ -55,7 +55,8 @@ Built from scratch with no frameworks, build tools, or npm dependencies.
 ├── certs.json              # Generated from Credly (do not edit by hand)
 ├── repos.json              # Generated from the GitHub API (do not edit by hand)
 ├── scripts/update-certs.mjs # Credly → certs.json
-├── scripts/update-repos.mjs # GitHub → repos.json
+├── scripts/update-repos.mjs # GitHub → repos.json (stats + auto cards)
+├── scripts/screenshot.mjs  # Screenshots for new projects
 ├── .github/workflows/certs.yml # Daily sync of both
 ├── jheremysanchezCVe.pdf   # Resume
 ├── img/
