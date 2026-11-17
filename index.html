@@ -10,8 +10,17 @@
     <meta property="og:title" content="Jheremy Sánchez | Sistemas, Redes y Ciberseguridad">
     <meta property="og:description" content="Administración de sistemas, redes y ciberseguridad defensiva. Proyectos, perfil y contacto.">
     <meta property="og:url" content="https://jheremysanchez7e9-web.github.io/PersonalPortfolio/">
-    <meta property="og:image" content="https://jheremysanchez7e9-web.github.io/PersonalPortfolio/img/logo.png">
+    <meta property="og:image" content="https://jheremysanchez7e9-web.github.io/PersonalPortfolio/img/og.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="Jheremy Sánchez · Sistemas, Redes y Ciberseguridad">
+    <meta property="og:locale" content="es_ES">
+    <meta name="twitter:card" content="summary_large_image">
+    <link rel="canonical" href="https://jheremysanchez7e9-web.github.io/PersonalPortfolio/">
     <link rel="icon" type="image/png" href="img/logo.png">
+    <!-- Apply the saved theme before first paint to avoid a dark/light flash. -->
+    <script>try { document.documentElement.dataset.theme = localStorage.getItem('portfolio-theme') || 'dark'; } catch (e) {}</script>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
@@ -25,6 +34,9 @@
                 <span id="typewriter" aria-hidden="true"></span>
             </div>
             <div class="top-controls">
+                <button id="palette-btn" class="icon-btn" type="button" data-i18n-aria="aPalette" aria-haspopup="dialog">
+                    <i class="fas fa-magnifying-glass" aria-hidden="true"></i><kbd class="kbd-hint">Ctrl K</kbd>
+                </button>
                 <button id="theme-toggle" class="icon-btn" type="button" data-i18n-aria="aTheme">
                     <i class="fas fa-sun" aria-hidden="true"></i>
                 </button>
@@ -96,11 +108,20 @@
 
             <!-- PROYECTOS -->
             <section id="projects-view" class="view-section" hidden>
+                <div class="filters" role="group" data-i18n-aria="fiLabel">
+                    <button type="button" class="chip active" data-filter="all" aria-pressed="true" data-i18n="fiAll"></button>
+                    <button type="button" class="chip" data-filter="sec" aria-pressed="false" data-i18n="fiSec"></button>
+                    <button type="button" class="chip" data-filter="sys" aria-pressed="false" data-i18n="fiSys"></button>
+                    <button type="button" class="chip" data-filter="web" aria-pressed="false" data-i18n="fiWeb"></button>
+                    <button type="button" class="chip" data-filter="game" aria-pressed="false" data-i18n="fiGame"></button>
+                </div>
                 <div class="grid">
-                    <article class="project-card">
+                    <article class="project-card" data-repo="jheremysebastian17/pawnscope" data-cat="web game">
+                        <a class="card-shot" href="https://jheremysebastian17.github.io/pawnscope/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/projects/pawnscope.jpg" alt="" loading="lazy" width="1280" height="720"></a>
                         <h3>PawnScope</h3>
                         <p data-i18n="p6D"></p>
                         <div class="tags"><span>JavaScript</span><span>WebAssembly</span><span>Stockfish</span></div>
+                        <div class="repo-meta" hidden></div>
                         <div class="card-links">
                             <a href="https://jheremysebastian17.github.io/pawnscope/" target="_blank" rel="noopener" class="btn-link">
                                 <i class="fas fa-external-link-alt" aria-hidden="true"></i> <span data-i18n="pDemo"></span>
@@ -110,10 +131,12 @@
                             </a>
                         </div>
                     </article>
-                    <article class="project-card">
+                    <article class="project-card" data-repo="jheremysebastian17/netsec-toolkit" data-cat="sec web">
+                        <a class="card-shot" href="https://jheremysebastian17.github.io/netsec-toolkit/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/projects/netsec.jpg" alt="" loading="lazy" width="1280" height="720"></a>
                         <h3>NetSec Toolkit</h3>
                         <p data-i18n="p5D"></p>
                         <div class="tags"><span>JavaScript</span><span>Bash</span><span>Security</span></div>
+                        <div class="repo-meta" hidden></div>
                         <div class="card-links">
                             <a href="https://jheremysebastian17.github.io/netsec-toolkit/" target="_blank" rel="noopener" class="btn-link">
                                 <i class="fas fa-external-link-alt" aria-hidden="true"></i> <span data-i18n="pDemo"></span>
@@ -123,10 +146,12 @@
                             </a>
                         </div>
                     </article>
-                    <article class="project-card">
+                    <article class="project-card" data-repo="jheremysebastian17/the-daily-exploit" data-cat="sec web">
+                        <a class="card-shot" href="https://jheremysebastian17.github.io/the-daily-exploit/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/projects/dailyexploit.jpg" alt="" loading="lazy" width="1280" height="720"></a>
                         <h3>The Daily Exploit</h3>
                         <p data-i18n="p4D"></p>
                         <div class="tags"><span>Python</span><span>JavaScript</span><span>CVE</span></div>
+                        <div class="repo-meta" hidden></div>
                         <div class="card-links">
                             <a href="https://jheremysebastian17.github.io/the-daily-exploit/" target="_blank" rel="noopener" class="btn-link">
                                 <i class="fas fa-external-link-alt" aria-hidden="true"></i> <span data-i18n="pDemo"></span>
@@ -136,10 +161,12 @@
                             </a>
                         </div>
                     </article>
-                    <article class="project-card">
+                    <article class="project-card" data-repo="jheremysanchez7e9-web/ProjecteTransversalASIXc_25-26" data-cat="sys">
+                        <a class="card-shot" href="https://jheremysanchez7e9-web.github.io/ProjecteTransversalASIXc_25-26/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/projects/transversal.jpg" alt="" loading="lazy" width="1280" height="720"></a>
                         <h3 data-i18n="p2T"></h3>
                         <p data-i18n="p2D"></p>
                         <div class="tags"><span>Datacenter</span><span>VLANs</span><span>Firewall</span></div>
+                        <div class="repo-meta" hidden></div>
                         <div class="card-links">
                             <a href="https://jheremysanchez7e9-web.github.io/ProjecteTransversalASIXc_25-26/" target="_blank" rel="noopener" class="btn-link">
                                 <i class="fas fa-external-link-alt" aria-hidden="true"></i> <span data-i18n="pDemo"></span>
@@ -149,10 +176,12 @@
                             </a>
                         </div>
                     </article>
-                    <article class="project-card">
+                    <article class="project-card" data-repo="jheremysebastian17/TheCrypticClub" data-cat="web game">
+                        <a class="card-shot" href="https://jheremysebastian17.github.io/TheCrypticClub/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/projects/cryptic.jpg" alt="" loading="lazy" width="1280" height="720"></a>
                         <h3>The Cryptic Club</h3>
                         <p data-i18n="p3D"></p>
                         <div class="tags"><span>JavaScript</span><span>HTML</span><span>CSS</span></div>
+                        <div class="repo-meta" hidden></div>
                         <div class="card-links">
                             <a href="https://jheremysebastian17.github.io/TheCrypticClub/" target="_blank" rel="noopener" class="btn-link">
                                 <i class="fas fa-external-link-alt" aria-hidden="true"></i> <span data-i18n="pDemo"></span>
@@ -162,10 +191,12 @@
                             </a>
                         </div>
                     </article>
-                    <article class="project-card">
+                    <article class="project-card" data-repo="jheremysanchez7e9-web/TA08_Calculadoraestalvienergetic" data-cat="web">
+                        <a class="card-shot" href="https://jheremysanchez7e9-web.github.io/TA08_Calculadoraestalvienergetic/" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true"><img src="img/projects/calculadora.jpg" alt="" loading="lazy" width="1280" height="720"></a>
                         <h3 data-i18n="p1T"></h3>
                         <p data-i18n="p1D"></p>
                         <div class="tags"><span>JavaScript</span><span>HTML</span><span>CSS</span></div>
+                        <div class="repo-meta" hidden></div>
                         <div class="card-links">
                             <a href="https://jheremysanchez7e9-web.github.io/TA08_Calculadoraestalvienergetic/" target="_blank" rel="noopener" class="btn-link">
                                 <i class="fas fa-external-link-alt" aria-hidden="true"></i> <span data-i18n="pDemo"></span>
@@ -222,6 +253,10 @@
                         <input type="text" id="f-name" data-i18n-ph="fName" autocomplete="name" required>
                         <textarea id="f-msg" rows="6" data-i18n-ph="fMsg" required></textarea>
                         <button type="submit" class="btn-primary" data-i18n="btnS"></button>
+                        <p id="form-note" class="form-note" role="status" hidden>
+                            <span data-i18n="fNote"></span>
+                            <button type="button" id="copy-email" class="btn-link alt"><i class="fas fa-copy" aria-hidden="true"></i> <span data-i18n="fCopy"></span></button>
+                        </p>
                     </form>
                 </div>
             </section>
@@ -240,6 +275,20 @@
 
     <!-- Filled on demand and shown only when printing a certificate to PDF -->
     <section id="cert-print" aria-hidden="true"></section>
+
+    <!-- Ctrl+K command palette -->
+    <dialog id="palette" class="overlay" data-i18n-aria="aPalette">
+        <input id="palette-input" type="text" autocomplete="off" spellcheck="false" role="combobox" aria-controls="palette-list" aria-expanded="true" data-i18n-ph="paPh">
+        <ul id="palette-list" role="listbox"></ul>
+        <p class="palette-foot"><kbd>↑</kbd><kbd>↓</kbd> <kbd>Enter</kbd> · <kbd>Esc</kbd></p>
+    </dialog>
+
+    <!-- Easter egg terminal (open from the palette or by typing the ` key) -->
+    <dialog id="terminal" class="overlay" aria-label="Terminal">
+        <div class="term-bar"><span></span><span></span><span></span><b>guest@jheremy: ~</b></div>
+        <div id="term-out" class="term-out" aria-live="polite"></div>
+        <form id="term-form" class="term-line"><label for="term-input">guest@jheremy:~$</label><input id="term-input" autocomplete="off" spellcheck="false" autocapitalize="off"></form>
+    </dialog>
 
     <script src="script.js"></script>
 </body>
