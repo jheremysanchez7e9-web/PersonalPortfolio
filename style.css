@@ -160,17 +160,18 @@ input, textarea {
 
 /* ---------- Card hover: subtle 3D tilt toward the cursor ----------
    Projects get an accent spotlight, certifications a glass sheen.
-   Mouse/trackpad only; phones and reduced-motion users keep static cards. */
+   Any device with a mouse (incl. touch laptops); reduced-motion users get the light effects without rotation. */
 .project-card { position: relative; overflow: hidden; isolation: isolate; }
 .project-card::before { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 0; }
-@media (hover: hover) and (pointer: fine) {
+@media (any-hover: hover) {
     .project-card {
-        transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(var(--lift, 0px));
+        transform: perspective(700px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(var(--lift, 0px)) scale(var(--zoom, 1));
         /* Slow ease back when the cursor leaves; also keeps the theme colour fade from the global rule. */
         transition: transform .5s cubic-bezier(.2, .8, .2, 1), box-shadow .3s, border-color .3s, background-color .3s, color .3s;
     }
     .project-card.is-tilting {
-        --lift: -4px;
+        --lift: -6px;
+        --zoom: 1.02;
         transition: transform .1s linear, box-shadow .3s, border-color .3s, background-color .3s, color .3s;
         border-color: var(--accent);
         box-shadow: 0 22px 40px -22px rgba(0, 0, 0, .6), 0 0 0 1px color-mix(in srgb, var(--accent) 35%, transparent);
