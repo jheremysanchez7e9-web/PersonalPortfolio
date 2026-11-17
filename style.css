@@ -157,3 +157,32 @@ input, textarea {
 }
 
 @media (prefers-reduced-motion: reduce) { * { animation: none !important; transition: none !important; } }
+
+/* ---------- Card hover: subtle 3D tilt toward the cursor ----------
+   Projects get an accent spotlight, certifications a glass sheen.
+   Mouse/trackpad only; phones and reduced-motion users keep static cards. */
+.project-card { position: relative; overflow: hidden; isolation: isolate; }
+.project-card::before { content: ''; position: absolute; inset: 0; z-index: -1; pointer-events: none; opacity: 0; }
+@media (hover: hover) and (pointer: fine) {
+    .project-card {
+        transform: perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg)) translateY(var(--lift, 0px));
+        /* Slow ease back when the cursor leaves; also keeps the theme colour fade from the global rule. */
+        transition: transform .5s cubic-bezier(.2, .8, .2, 1), box-shadow .3s, border-color .3s, background-color .3s, color .3s;
+    }
+    .project-card.is-tilting {
+        --lift: -4px;
+        transition: transform .1s linear, box-shadow .3s, border-color .3s, background-color .3s, color .3s;
+        border-color: var(--accent);
+        box-shadow: 0 22px 40px -22px rgba(0, 0, 0, .6), 0 0 0 1px color-mix(in srgb, var(--accent) 35%, transparent);
+    }
+    .project-card::before {
+        transition: opacity .3s;
+        background: radial-gradient(380px circle at var(--mx, 50%) var(--my, 50%), color-mix(in srgb, var(--accent) 20%, transparent), transparent 65%);
+    }
+    .project-card.cert-card::before {
+        background: linear-gradient(115deg, transparent 32%, rgba(255, 255, 255, .26) 46%, color-mix(in srgb, var(--accent) 18%, transparent) 52%, transparent 66%);
+        background-size: 260% 260%;
+        background-position: var(--sx, 50%) var(--sy, 50%);
+    }
+    .project-card.is-tilting::before { opacity: 1; }
+}

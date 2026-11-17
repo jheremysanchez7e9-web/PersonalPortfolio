@@ -335,3 +335,45 @@ const savedLang = localStorage.getItem('portfolio-lang') || navigator.language.s
 langSelect.value = dict[savedLang] ? savedLang : 'en';
 changeLang();
 showView();
+
+// Card hover: tilt toward the cursor and move the spotlight/sheen with it.
+// Delegated on document so certification cards rendered later from certs.json work too.
+(() => {
+    const finePointer = matchMedia('(hover: hover) and (pointer: fine)');
+    const reducedMotion = matchMedia('(prefers-reduced-motion: reduce)');
+    const MAX_DEG = 6;
+    let active = null;
+    let frame = 0;
+
+    const reset = () => {
+        if (!active) return;
+        active.classList.remove('is-tilting');
+        active.style.setProperty('--rx', '0deg');
+        active.style.setProperty('--ry', '0deg');
+        active = null;
+    };
+
+    document.addEventListener('pointermove', (e) => {
+        if (e.pointerType !== 'mouse' || !finePointer.matches || reducedMotion.matches) return;
+        const card = e.target.closest ? e.target.closest('.project-card') : null;
+        if (card !== active) reset();
+        if (!card) return;
+        active = card;
+        cancelAnimationFrame(frame);
+        frame = requestAnimationFrame(() => {
+            if (active !== card) return; // the cursor already left this card
+            const r = card.getBoundingClientRect();
+            const x = Math.min(1, Math.max(0, (e.clientX - r.left) / r.width));
+            const y = Math.min(1, Math.max(0, (e.clientY - r.top) / r.height));
+            card.style.setProperty('--ry', `${((x - 0.5) * 2 * MAX_DEG).toFixed(2)}deg`);
+            card.style.setProperty('--rx', `${((0.5 - y) * 2 * MAX_DEG).toFixed(2)}deg`);
+            card.style.setProperty('--mx', `${(x * 100).toFixed(1)}%`);
+            card.style.setProperty('--my', `${(y * 100).toFixed(1)}%`);
+            card.style.setProperty('--sx', `${(100 - x * 100).toFixed(1)}%`);
+            card.style.setProperty('--sy', `${(100 - y * 100).toFixed(1)}%`);
+            card.classList.add('is-tilting');
+        });
+    }, { passive: true });
+    document.addEventListener('pointerleave', reset);
+    window.addEventListener('blur', reset);
+})();
