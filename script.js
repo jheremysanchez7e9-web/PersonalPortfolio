@@ -387,9 +387,35 @@ function renderRepos() {
         box.hidden = false;
     });
 }
+// New repos found by the daily Action arrive with a `card` and are added before the hand-written cards.
+function addAutoCards() {
+    const cards = Object.entries(repos).filter(([full, r]) => r.card && !document.querySelector(`[data-repo="${full}"]`));
+    document.querySelector('#projects-view .grid').prepend(...cards.map(([full, { card: c }]) => {
+        const shot = el('a', { className: 'card-shot', href: c.demo, target: '_blank', rel: 'noopener', tabIndex: -1, ariaHidden: 'true' },
+            el('img', { src: c.image, alt: '', loading: 'lazy', width: 1280, height: 720, onerror: () => shot.remove() }));
+        const card = el('article', { className: 'project-card' },
+            shot,
+            el('h3', {}, c.title),
+            el('p', {}, c.description),
+            el('div', { className: 'tags' }, ...c.tags.map((tag) => el('span', {}, tag))),
+            el('div', { className: 'repo-meta', hidden: true }),
+            el('div', { className: 'card-links' },
+                el('a', { className: 'btn-link', href: c.demo, target: '_blank', rel: 'noopener' }, icon('fas fa-external-link-alt'), ' ', i18nSpan('pDemo')),
+                el('a', { className: 'btn-link alt', href: c.repo, target: '_blank', rel: 'noopener' }, icon('fab fa-github'), ' ', i18nSpan('pRepo'))));
+        card.dataset.repo = full;
+        card.dataset.cat = c.cat;
+        return card;
+    }));
+}
+// A span that changeLang() keeps translated, like the hand-written data-i18n markup.
+function i18nSpan(key) {
+    const s = el('span', {}, t(key));
+    s.dataset.i18n = key;
+    return s;
+}
 fetch('repos.json')
     .then((res) => (res.ok ? res.json() : null))
-    .then((data) => { repos = data; renderRepos(); })
+    .then((data) => { repos = data; if (repos) addAutoCards(); renderRepos(); })
     .catch(() => {}); // stats are optional; the cards work without them
 
 /* ---------- Ctrl+K command palette ---------- */
