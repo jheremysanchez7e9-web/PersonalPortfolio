@@ -12,7 +12,7 @@ const dict = {
         ed1T: "Grado Superior ASIR · Perfil Ciberseguridad", ed1S: "Institut Tecnològic de Barcelona · En curso",
         ed2T: "Bachillerato",
         certT: "Certificaciones", certS: "Insignias digitales verificables, sincronizadas automáticamente desde Credly.", btnCert: "Ver certificaciones", nCe: "CERTIFICADOS",
-        ceVerify: "Verificar", cePdf: "Ver PDF", ceSave: "Guardar PDF", ceProfile: "Perfil en Credly", ceLinkedin: "Certificaciones en LinkedIn", ceEmpty: "No se pudieron cargar las certificaciones. Puedes verlas en Credly.",
+        ceVerify: "Verificar", cePdf: "Ver PDF", ceSave: "Guardar PDF", ceExtT: "Otras certificaciones", ceExtS: "Certificados oficiales emitidos fuera de Credly.", ceProfile: "Perfil en Credly", ceLinkedin: "Certificaciones en LinkedIn", ceEmpty: "No se pudieron cargar las certificaciones. Puedes verlas en Credly.",
         prKind: "Insignia digital verificada", prTo: "Otorgada a", prBy: "Emitida por", prVerify: "Verificación",
         btnCV: "Descargar CV",
         p1T: "Calculadora Energética", p1D: "Aplicación web interactiva para calcular el ahorro eléctrico.",
@@ -41,7 +41,7 @@ const dict = {
         ed1T: "Higher Vocational Training in Network Systems Administration (ASIR) · Cybersecurity", ed1S: "Institut Tecnològic de Barcelona · In progress",
         ed2T: "High School Diploma",
         certT: "Certifications", certS: "Verifiable digital badges, synced automatically from Credly.", btnCert: "View certifications", nCe: "CERTIFICATES",
-        ceVerify: "Verify", cePdf: "View PDF", ceSave: "Save PDF", ceProfile: "Credly profile", ceLinkedin: "Certifications on LinkedIn", ceEmpty: "The certifications could not be loaded. You can view them on Credly.",
+        ceVerify: "Verify", cePdf: "View PDF", ceSave: "Save PDF", ceExtT: "Other certifications", ceExtS: "Official certificates issued outside Credly.", ceProfile: "Credly profile", ceLinkedin: "Certifications on LinkedIn", ceEmpty: "The certifications could not be loaded. You can view them on Credly.",
         prKind: "Verified digital badge", prTo: "Awarded to", prBy: "Issued by", prVerify: "Verification",
         btnCV: "Download CV",
         p1T: "Energy Calculator", p1D: "Interactive web app to calculate electricity savings.",
@@ -70,7 +70,7 @@ const dict = {
         ed1T: "Grau Superior ASIX · Perfil Ciberseguretat", ed1S: "Institut Tecnològic de Barcelona · En curs",
         ed2T: "Batxillerat",
         certT: "Certificacions", certS: "Insígnies digitals verificables, sincronitzades automàticament des de Credly.", btnCert: "Veure certificacions", nCe: "CERTIFICATS",
-        ceVerify: "Verificar", cePdf: "Veure PDF", ceSave: "Desar PDF", ceProfile: "Perfil a Credly", ceLinkedin: "Certificacions a LinkedIn", ceEmpty: "No s'han pogut carregar les certificacions. Les pots veure a Credly.",
+        ceVerify: "Verificar", cePdf: "Veure PDF", ceSave: "Desar PDF", ceExtT: "Altres certificacions", ceExtS: "Certificats oficials emesos fora de Credly.", ceProfile: "Perfil a Credly", ceLinkedin: "Certificacions a LinkedIn", ceEmpty: "No s'han pogut carregar les certificacions. Les pots veure a Credly.",
         prKind: "Insígnia digital verificada", prTo: "Atorgada a", prBy: "Emesa per", prVerify: "Verificació",
         btnCV: "Descarregar CV",
         p1T: "Calculadora Energètica", p1D: "Aplicació web interactiva per calcular l'estalvi elèctric.",
@@ -99,7 +99,7 @@ const dict = {
         ed1T: "Formation supérieure en administration de systèmes et réseaux (ASIR) · Cybersécurité", ed1S: "Institut Tecnològic de Barcelona · En cours",
         ed2T: "Baccalauréat",
         certT: "Certifications", certS: "Badges numériques vérifiables, synchronisés automatiquement depuis Credly.", btnCert: "Voir les certifications", nCe: "CERTIFICATS",
-        ceVerify: "Vérifier", cePdf: "Voir le PDF", ceSave: "Enregistrer en PDF", ceProfile: "Profil Credly", ceLinkedin: "Certifications sur LinkedIn", ceEmpty: "Impossible de charger les certifications. Vous pouvez les consulter sur Credly.",
+        ceVerify: "Vérifier", cePdf: "Voir le PDF", ceSave: "Enregistrer en PDF", ceExtT: "Autres certifications", ceExtS: "Certificats officiels délivrés en dehors de Credly.", ceProfile: "Profil Credly", ceLinkedin: "Certifications sur LinkedIn", ceEmpty: "Impossible de charger les certifications. Vous pouvez les consulter sur Credly.",
         prKind: "Badge numérique vérifié", prTo: "Décerné à", prBy: "Délivré par", prVerify: "Vérification",
         btnCV: "Télécharger CV",
         p1T: "Calculateur Énergie", p1D: "Application web interactive pour calculer les économies d'électricité.",
@@ -128,7 +128,7 @@ const dict = {
         ed1T: "Höhere Berufsausbildung Netzwerk- und Systemadministration (ASIR) · Cybersicherheit", ed1S: "Institut Tecnològic de Barcelona · Laufend",
         ed2T: "Abitur",
         certT: "Zertifikate", certS: "Verifizierbare digitale Badges, automatisch mit Credly synchronisiert.", btnCert: "Zertifikate ansehen", nCe: "ZERTIFIKATE",
-        ceVerify: "Verifizieren", cePdf: "PDF ansehen", ceSave: "Als PDF speichern", ceProfile: "Credly-Profil", ceLinkedin: "Zertifikate auf LinkedIn", ceEmpty: "Die Zertifikate konnten nicht geladen werden. Sie sind auf Credly einsehbar.",
+        ceVerify: "Verifizieren", cePdf: "PDF ansehen", ceSave: "Als PDF speichern", ceExtT: "Weitere Zertifikate", ceExtS: "Offizielle Zertifikate außerhalb von Credly.", ceProfile: "Credly-Profil", ceLinkedin: "Zertifikate auf LinkedIn", ceEmpty: "Die Zertifikate konnten nicht geladen werden. Sie sind auf Credly einsehbar.",
         prKind: "Verifiziertes digitales Badge", prTo: "Verliehen an", prBy: "Ausgestellt von", prVerify: "Verifizierung",
         btnCV: "CV Herunterladen",
         p1T: "Energie-Rechner", p1D: "Interaktive Web-App zur Berechnung von Stromersparnissen.",
@@ -197,7 +197,7 @@ function renderCerts() {
     if (certs === null) return;
     if (!certs) { grid.replaceChildren(el('p', { className: 'about-text' }, t('ceEmpty'))); return; }
 
-    grid.replaceChildren(...certs.map((c) => {
+    const card = (c) => {
         const pdf = c.pdf
             ? el('a', { className: 'btn-link alt', href: c.pdf, target: '_blank', rel: 'noopener' }, icon('fas fa-file-pdf'), ' ', t('cePdf'))
             : el('button', { className: 'btn-link alt', type: 'button', onclick: () => printCert(c) }, icon('fas fa-file-pdf'), ' ', t('ceSave'));
@@ -206,10 +206,15 @@ function renderCerts() {
             el('h3', {}, c.title),
             el('p', { className: 'cert-meta' }, [c.issuer, certDate(c)].filter(Boolean).join(' · ')),
             el('div', { className: 'tags' }, ...c.skills.slice(0, 5).map((s) => el('span', {}, s))),
-            el('div', { className: 'card-links' },
+            // Manual certs without a public verification link show only the card.
+            c.url ? el('div', { className: 'card-links' },
                 el('a', { className: 'btn-link', href: c.url, target: '_blank', rel: 'noopener' }, icon('fas fa-circle-check'), ' ', t('ceVerify')),
-                pdf));
-    }));
+                pdf) : '');
+    };
+    const ext = certs.filter((c) => c.external);
+    grid.replaceChildren(...certs.filter((c) => !c.external).map(card));
+    document.getElementById('cert-grid-ext').replaceChildren(...ext.map(card));
+    document.getElementById('certs-ext').hidden = !ext.length;
 }
 
 // Credly offers no public PDF, so the browser's "Save as PDF" prints a one-page summary with the verification link.

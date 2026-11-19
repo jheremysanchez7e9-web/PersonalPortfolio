@@ -26,7 +26,7 @@ Built from scratch with no frameworks, build tools, or npm dependencies.
 - **Command palette (Ctrl+K):** jump to any section or project, switch theme or language, download the CV.
 - **Terminal easter egg:** press the <kbd>`</kbd> key (or pick it in the palette) and type `help`.
 - **Link previews:** Open Graph / Twitter card with `img/og.png` (1200×630).
-- **Certifications synced from Credly:** a GitHub Action (`.github/workflows/certs.yml`) runs `scripts/update-certs.mjs` daily and regenerates `certs.json` from the public Credly profile. Each badge is shown as a card with a verification link and can be saved as a one-page PDF. To link an official PDF instead, add it as `certs/<slug>.pdf` (the slug is in `certs.json`).
+- **Certifications synced from Credly:** a GitHub Action (`.github/workflows/certs.yml`) runs `scripts/update-certs.mjs` daily and regenerates `certs.json` from the public Credly profile. Each badge is shown as a card with a verification link and can be saved as a one-page PDF. To link an official PDF instead, add it as `certs/<slug>.pdf` (the slug is in `certs.json`). Certificates not on Credly (e.g. Cambridge B2 First) live in `certs-manual.json` and are merged in by the same script; with `"url": null` the card shows no buttons, and `"external": true` lists them under a separate "Other certifications" block.
 - **Animated education timeline** in the About view.
 - **CV download:** one-click PDF.
 
@@ -53,6 +53,7 @@ Built from scratch with no frameworks, build tools, or npm dependencies.
 ├── style.css               # Theming, layout, animations
 ├── script.js               # i18n, view routing, theme, certifications, contact form
 ├── certs.json              # Generated from Credly (do not edit by hand)
+├── certs-manual.json       # Certificates not on Credly (edit by hand)
 ├── repos.json              # Generated from the GitHub API (do not edit by hand)
 ├── scripts/update-certs.mjs # Credly → certs.json
 ├── scripts/update-repos.mjs # GitHub → repos.json (stats + auto cards)

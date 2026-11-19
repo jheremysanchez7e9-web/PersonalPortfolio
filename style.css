@@ -90,7 +90,7 @@ body {
 
 .certs-head, .certs-more { max-width: 1000px; }
 #certs-view { gap: 20px; }
-#cert-grid { grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); }
+#cert-grid, #cert-grid-ext { grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); }
 .cert-card { align-items: flex-start; }
 .cert-img { width: 120px; height: 120px; object-fit: contain; align-self: center; }
 .cert-meta { opacity: 0.8; font-size: 0.9rem; flex: 0 !important; }
