@@ -1,6 +1,6 @@
 // Downloads the public Credly badges and writes certs.json for the site.
 // Run by .github/workflows/certs.yml (daily) or locally: node scripts/update-certs.mjs
-import { existsSync, writeFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 
 const CREDLY_USER = 'jheremy-s-sanchez-morillo';
 const https = (url) => (typeof url === 'string' && url.startsWith('https://') ? url : null);
@@ -39,6 +39,8 @@ const certs = badges
       pdf: existsSync(pdf) ? pdf : null,
     };
   })
+  // Certificates not on Credly (e.g. Cambridge) are kept by hand in certs-manual.json.
+  .concat(existsSync('certs-manual.json') ? JSON.parse(readFileSync('certs-manual.json', 'utf8')) : [])
   .sort((a, b) => String(b.issued).localeCompare(String(a.issued)));
 
 // No timestamp in the file, so the workflow only commits when a badge actually changes.

@@ -18,5 +18,26 @@
     ],
     "url": "https://www.credly.com/badges/a8620c8f-d69b-40bd-9a25-5059df15b43b/public_url",
     "pdf": null
+  },
+  {
+    "id": "cambridge-first-b2",
+    "external": true,
+    "slug": "cambridge-first-b2",
+    "title": "B2 First (FCE)",
+    "issuer": "Cambridge English",
+    "recipient": "Jheremy Sebastian Sanchez Morillo",
+    "issued": "2023-09-01",
+    "expires": null,
+    "image": "img/certs/cambridge.svg",
+    "description": "Cambridge English Level 1 Certificate in ESOL International (First), CEFR level B2.",
+    "skills": [
+      "English B2",
+      "Reading",
+      "Writing",
+      "Listening",
+      "Speaking"
+    ],
+    "url": null,
+    "pdf": null
   }
 ]
