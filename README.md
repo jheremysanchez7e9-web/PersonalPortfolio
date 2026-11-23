@@ -29,6 +29,7 @@ Built from scratch with no frameworks, build tools, or npm dependencies.
 - **Certifications synced from Credly:** a GitHub Action (`.github/workflows/certs.yml`) runs `scripts/update-certs.mjs` daily and regenerates `certs.json` from the public Credly profile. Each badge is shown as a card with a verification link and can be saved as a one-page PDF. To link an official PDF instead, add it as `certs/<slug>.pdf` (the slug is in `certs.json`). Certificates not on Credly (e.g. Cambridge B2 First) live in `certs-manual.json` and are merged in by the same script; with `"url": null` the card shows no buttons, and `"external": true` lists them under a separate "Other certifications" block.
 - **Animated education timeline** in the About view.
 - **CV download:** one-click PDF.
+- **Private visit stats:** cookie-free [GoatCounter](https://www.goatcounter.com/) script (pinned with SRI); numbers are only visible in the owner's dashboard.
 
 ---
 
