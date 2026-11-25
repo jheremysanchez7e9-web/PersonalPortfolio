@@ -9,7 +9,7 @@
   },
   "jheremysebastian17/the-daily-exploit": {
     "stars": 1,
-    "pushed": "2026-11-24T04:41:58Z"
+    "pushed": "2026-11-25T13:59:57Z"
   },
   "jheremysanchez7e9-web/ProjecteTransversalASIXc_25-26": {
     "stars": 0,
@@ -22,6 +22,21 @@
   "jheremysanchez7e9-web/TA08_Calculadoraestalvienergetic": {
     "stars": 0,
     "pushed": "2026-04-27T10:04:40Z"
+  },
+  "jheremysebastian17/test-phishing-jsm": {
+    "stars": 0,
+    "pushed": "2026-11-25T08:23:31Z",
+    "card": {
+      "title": "Test Phishing Jsm",
+      "description": "",
+      "demo": "https://jheremysebastian17.github.io/test-phishing-jsm/",
+      "repo": "https://github.com/jheremysebastian17/test-phishing-jsm",
+      "image": "img/projects/test-phishing-jsm.jpg",
+      "cat": "web",
+      "tags": [
+        "HTML"
+      ]
+    }
   },
   "jheremysebastian17/fileshot": {
     "stars": 0,
